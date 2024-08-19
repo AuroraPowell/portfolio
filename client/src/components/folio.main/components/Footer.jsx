@@ -1,5 +1,5 @@
-import { useState } from "react";
 
+import React from "react";
 const Footer = () => {
   return (
     <div className="inline-flex p-3 justify-around text-right font-italic font-mono text-[#E5FCFF] bottom-0">

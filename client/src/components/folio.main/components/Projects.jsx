@@ -1,6 +1,5 @@
 import React from "react";
 
-import img from "../../portfolio/assets/silvia.jpg";
 import Footer from "./Footer";
 import Menu from "./functional/menu";
 
@@ -13,10 +12,7 @@ const Projects = () => {
           className="-mb-36 h-52 w-52 z-20
         bg-[#7df0ff] rounded-full items-center justify-center flex"
         >
-          <img
-            src={img}
-            className="h-44 w-44 object-center rounded-full border-[#B8336A] border-2  "
-          />
+          
         </div>
         <div
           id="card"
@@ -44,7 +40,7 @@ const Projects = () => {
             <p className="text-lime-300">"Project Name"</p>
             <br></br>
             <div className="inline-flex mb-9">
-              <p className="line-clamp-2 overflow-auto m-5 mt-0">
+              <p className="line-clamp-2 overflow-y-auto overflow-x-auto m-5 mt-0">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris

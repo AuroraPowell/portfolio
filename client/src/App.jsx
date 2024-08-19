@@ -1,20 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from 'react'
 // import Content from "./components/projects/countme.in/content.jsx";
-// import createStore from "react-auth-kit/createStore";
-// import AuthProvider from "react-auth-kit";
 
-// import Portfolio from "./components/portfolio/index.jsx";
-import Projects from "../../src/components/portfolio/components/Projects.jsx";
-import Landing from "../../src/components/portfolio/components/Landing.jsx";
-
-// the following is for the react-auth-kit
-
-// const store = createStore({
-//   authName: "_auth",
-//   authType: "cookie",
-//   cookieDomain: window.location.hostname,
-//   cookieSecure: windowlocation.protocol === "https:",
-// });
+import Projects from "./components/folio.main/components/Projects"
+import Landing from "./components/folio.main/components/Landing"
 
 // Site palette (for now??)
 const colors = {
@@ -26,9 +15,6 @@ const colors = {
 };
 
 function App() {
-  // <AuthProvider store={store}>
-  // [[ v<< PLEASE PUT THE FOLLOWING RETURN BETWEEN THESE >>^ ]]
-  // </AuthProvider>;
 
   return (
     <BrowserRouter>

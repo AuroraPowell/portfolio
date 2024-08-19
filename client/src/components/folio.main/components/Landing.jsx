@@ -1,13 +1,11 @@
 import React from "react";
-import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Footer from "./Footer";
 import Menu from "./functional/menu";
 
 const Landing = () => {
-  // the following useState includes the responsive nature of the website...hopefully.
-  const [design, setDesign] = useState({});
+ 
   const navigate = useNavigate();
   const Content = () => {
     return (

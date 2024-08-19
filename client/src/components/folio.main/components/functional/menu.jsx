@@ -1,9 +1,7 @@
+import React from "react";
 // import { redirect } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-import img from "../../assets/wallpaper.png";
-
-import { GiHamburgerMenu } from "react-icons/gi";
 
 const Menu = () => {
   const navigate = useNavigate();
@@ -26,9 +24,7 @@ const Menu = () => {
       </div>
 
       <button className="size-24 text-black lg:invisible md:visible">
-        <GiHamburgerMenu />
       </button>
-      <img src={img} className="size-20" />
     </div>
   );
   return framework;
