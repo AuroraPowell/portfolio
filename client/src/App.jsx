@@ -2,8 +2,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React from 'react'
 // import Content from "./components/projects/countme.in/content.jsx";
 
-import Projects from "./components/folio.main/components/Projects"
-import Landing from "./components/folio.main/components/Landing"
+import Projects from "./components/Projects"
+import Landing from "./components/Landing"
 
 // Site palette (for now??)
 const colors = {
