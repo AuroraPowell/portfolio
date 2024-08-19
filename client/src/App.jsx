@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import React from 'react'
+import React from "react";
 // import Content from "./components/projects/countme.in/content.jsx";
 
-import Projects from "./components/Projects"
-import Landing from "./components/Landing"
+import Projects from "./components/Projects";
+import Landing from "./components/Landing";
 
 // Site palette (for now??)
 const colors = {
@@ -15,7 +15,6 @@ const colors = {
 };
 
 function App() {
-
   return (
     <BrowserRouter>
       <Routes>
