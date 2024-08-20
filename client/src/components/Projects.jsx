@@ -1,7 +1,9 @@
 import React from "react";
 
 import Footer from "./Footer";
+
 import Menu from "./functional/menu";
+import AnimatedPage from "./functional/AnimatedPage";
 
 const Projects = () => {
   const Card = () => {
@@ -10,10 +12,8 @@ const Projects = () => {
         <div
           id="circle showcase"
           className="-mb-36 h-52 w-52 z-20
-        bg-[#7df0ff] rounded-full items-center justify-center flex"
-        >
-          
-        </div>
+        bg-[#E5FCFF] rounded-full items-center justify-center flex"
+        ></div>
         <div
           id="card"
           className=" bg-[#E5FCFF] bg-gradient-to-t from-[#B8336A] via-[#C490D1] 
@@ -57,19 +57,25 @@ const Projects = () => {
     );
   };
   return (
-    <div className="via-[#ABDAFC] from-[#B8336A] bg-gradient-to-b flex flex-col mx-auto">
-      <Menu />
-      <div className="min-h-screen flex-grow mx-auto">
-        <div id="temp" className="grid lg:grid-cols-2 md:grid-cols-1 flex-grow">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+    <AnimatedPage>
+      <div className="via-[#ABDAFC] from-[#B8336A] bg-gradient-to-b flex flex-col mx-auto">
+        <Menu />
+
+        <div className="min-h-screen flex-grow mx-auto">
+          <div
+            id="temp"
+            className="grid lg:grid-cols-2 md:grid-cols-1 flex-grow"
+          >
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+          </div>
+          <div id="card-loader"></div>
         </div>
-        <div id="card-loader"></div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </AnimatedPage>
   );
 };
 export default Projects;

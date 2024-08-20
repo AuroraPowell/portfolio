@@ -2,10 +2,11 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 import Footer from "./Footer";
+
 import Menu from "./functional/menu";
+import AnimatedPage from "./functional/AnimatedPage";
 
 const Landing = () => {
- 
   const navigate = useNavigate();
   const Content = () => {
     return (
@@ -37,14 +38,16 @@ const Landing = () => {
   };
 
   return (
-    <div
-      id="landing"
-      className="flex-col flex bg-[#ABDAFC] bg-gradient-to-t from-[#B8336A]"
-    >
-      <Menu />
-      <Content />
-      <Footer />
-    </div>
+    <AnimatedPage>
+      <div
+        id="landing"
+        className="flex-col flex bg-[#ABDAFC] bg-gradient-to-t from-[#B8336A]"
+      >
+        <Menu className="fixed" />
+        <Content />
+        <Footer />
+      </div>
+    </AnimatedPage>
   );
 };
 
