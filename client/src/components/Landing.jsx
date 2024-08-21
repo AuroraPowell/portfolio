@@ -14,8 +14,8 @@ const Landing = () => {
 
       <div id="coding" className="">
         <div className="min-h-screen ">
-          <h1 className=" text-[#E5FCFF] opacity-50 p-9 font-bold text-6xl font-mono absolute bottom-0 right-0">
-            hi there. i am a coder
+          <h1 className=" -skew-x-6 text-[#E5FCFF] opacity-50 p-9 font-bold text-6xl font-mono absolute bottom-56 right-0">
+            hi there. <br /> i'm a coder
           </h1>
           {/* // implement stuff here to load from json data about me*/}
         </div>
@@ -41,7 +41,7 @@ const Landing = () => {
     <AnimatedPage>
       <div
         id="landing"
-        className="flex-col flex bg-[#ABDAFC] bg-gradient-to-t from-[#B8336A]"
+        className="flex-col flex from-[#9ecdee] bg-gradient-to-b to-[#B8336A] via-[#C490D1]"
       >
         <Menu className="fixed" />
         <Content />

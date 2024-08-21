@@ -4,6 +4,7 @@ import React from "react";
 
 import Projects from "./components/Projects";
 import Landing from "./components/Landing";
+import About from "./components/About";
 
 // Site palette (for now??)
 const colors = {
@@ -16,10 +17,11 @@ const colors = {
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter class="scroll-smooth">
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </BrowserRouter>
   );

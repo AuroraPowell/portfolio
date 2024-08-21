@@ -16,12 +16,10 @@ const AnimatedPage = ({ children }) => {
       exit="exit"
       transition={{
         type: "spring",
-        duration: 1,
+        duration: 0.3,
       }}
     >
       {children}
     </motion.div>
   );
 };
-
-export default AnimatedPage;
