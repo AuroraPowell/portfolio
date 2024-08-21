@@ -2,24 +2,29 @@ import { motion } from "framer-motion";
 import React from "react";
 
 const animations = {
-  initial: { opacity: 0.7, y: top },
-  animate: { opacity: 1, y: 0 },
-  exit: { opacity: 0.7, y: -100 },
+  initial: { scale: 0, opacity: 0 },
+  animate: { scale: 1, opacity: 1 },
+  exit: { scale: 0, opacity: 1 },
 };
 
-const AnimatedPage = ({ children }) => {
+const InRoll = ({ children }) => {
   return (
     <motion.div
+      className="z-30"
       variants={animations}
       initial="initial"
       animate="animate"
       exit="exit"
+      viewport={{ once: true }}
       transition={{
-        type: "spring",
         duration: 0.3,
+        type: "spring",
+        damping: 17,
       }}
     >
       {children}
     </motion.div>
   );
 };
+
+export default InRoll;
