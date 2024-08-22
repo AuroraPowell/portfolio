@@ -1,38 +1,49 @@
 import React from "react";
 import Menu from "./functional/menu";
 import Footer from "./Footer";
+
+import selfie from "../assets/selfie.jpg";
+
 import AnimatedPage from "./functional/AnimatedPage";
+import InRoll from "./functional/inRoll";
 
 const About = () => {
   const Card = () => {
     return (
       <div
-        className="p-3 flex flex-col items-center text-center
-      font-bold font-mono text-[#E5FCFF] mx-auto "
+        className="bg-cover p-3 flex flex-col items-center text-center
+      font-bold font-mono text-[#E5FCFF] mx-auto w-fit"
       >
-        <div
-          id="circle showcase"
-          className="text-[#E5FCFF] mt-0 -mb-36 size-48 z-20 from-50% text-transparent bg-gradient-radial to-[#E5FCFF] from-[#ABDAFC]
-            rounded-full items-center justify-center flex"
-        ></div>
-        <div className=" opacity-50 h-56 rounded-t-full rounded-b-none  absolute bottom-0 divide-x-4 z-10 divide-white"></div>
+        <InRoll>
+          <div id="ballContainer" className="rounded-full size-64 -mb-24">
+            <div
+              id="ball"
+              className="absolute size-64 rounded-full z-20
+          bg-gradient-radial from-transparent via-[#ABDAFC] via-70% to-75% to-[#E5FCFF] from-30% opacity-80 bg-cover"
+            ></div>
+            <img src={selfie} className="absolute rounded-full z-10" />
+          </div>
+        </InRoll>
+
         <div
           id="card"
-          className="relative border-[#E5FCFF] border-b-0 border-x-4
+          className="z-20 relative border-[#E5FCFF] border-b-0 border-x-4
           bg-[#E5FCFF] bg-gradient-to-t from-[#B8336A] via-[#C490D1]
-            rounded-b-3xl w-80  mx-24 my-9 "
+            rounded-b-3xl w-80  "
         >
           <div
             id="ball holder"
-            className=" from-[#B8336A] via-[#ACACDE] bg-gradient-to-t rounded-b-full h-36"
+            className=" from-[#B8336A] via-[#ACACDE] to-[#ACACDE] bg-gradient-to-t rounded-b-full h-36"
           ></div>
           {/* *** This is where card info should go. *** */}
-          <div className="z-0 bg-transparent flex-grow flex-col p-9 pt-0 gap-2 divide-y-2  divide-[#ABDAFC]">
+          <div className="flex-grow flex-col p-9 pt-0 gap-2 divide-y-2 text-[#E5FCFF] divide-[#B8336A]">
             <p className="py-3 text-xl lowercase">Aurora Powell</p>
             <div className="gap-9 pt-3">
-              <p className="font-light">
+              <p className="font-light p-2 ">
                 I am a full stack developer that has 10 years experience in
-                front-end web development.{" "}
+                front-end web development. I graduated from Bridgewater College
+                with a Bachelor's Degree in Computer Science with a minor in
+                Art.{" "}
               </p>
               <button
                 className="tracking-widest lowercase rounded-xl
@@ -50,12 +61,12 @@ const About = () => {
   return (
     <AnimatedPage>
       <div className="min-h-screen to-[#ABDAFC] from-[#B8336A] bg-gradient-to-b flex flex-col mx-auto">
-        <Menu className="flex-grow" />
+        <Menu />
 
-        <div id="card-loader" className="w-full flex-grow mx-auto">
+        <div id="card-loader" className="w-full flex-grow mx-auto p-9">
           <Card />
         </div>
-        <Footer className="flex-grow" />
+        <Footer />
       </div>
     </AnimatedPage>
   );
