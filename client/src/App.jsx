@@ -6,6 +6,11 @@ import Projects from "./components/Projects";
 import Landing from "./components/Landing";
 import About from "./components/About";
 
+import ScrollToTop from "./components/functional/ScrollToTop";
+
+// Projects
+import eventList from "./components/projects/countme.in/eventList";
+
 // Site palette (for now??)
 const colors = {
   rasp: "#B8336A",
@@ -18,10 +23,12 @@ const colors = {
 function App() {
   return (
     <BrowserRouter class="scroll-smooth">
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/about" element={<About />} />
+        <Route path="/rsvp" element={eventList} />
       </Routes>
     </BrowserRouter>
   );

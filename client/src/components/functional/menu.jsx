@@ -1,11 +1,10 @@
-import { React, useState } from "react";
+import React from "react";
 // import { redirect } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { WiMoonAltWaxingCrescent3 } from "react-icons/wi";
 
 const Menu = () => {
-  const [value, setValue] = useState("");
   const navigate = useNavigate();
   const framework = (
     <div
@@ -21,15 +20,11 @@ const Menu = () => {
         <p className="text-2xl font-bold font-mono">.DEV</p>
       </div>
       <div className="flex relative flex-grow items-center ">
-        <div className=" flex-grow invisible lg:visible">
+        <div className=" flex-grow invisible lg:visible gap-10">
           <button onClick={() => navigate("/")} className="px-3">
             home
           </button>
-          <label>
-            <select>
-              <option></option>
-            </select>
-          </label>
+          <button onClick={() => navigate("/projects")}>projects</button>
           <button onClick={() => navigate("/about")} className="px-3">
             about
           </button>

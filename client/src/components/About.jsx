@@ -15,11 +15,11 @@ const About = () => {
       font-bold font-mono text-[#E5FCFF] mx-auto w-fit"
       >
         <InRoll>
-          <div id="ballContainer" className="rounded-full size-64 -mb-24">
+          <div className="relative rounded-full size-64 -mb-24">
             <div
               id="ball"
               className="absolute size-64 rounded-full z-20
-          bg-gradient-radial from-transparent via-[#ABDAFC] via-70% to-75% to-[#E5FCFF] from-30% opacity-80 bg-cover"
+          bg-gradient-radial from-transparent via-[#ABDAFC] via-75% to-80% to-[#E5FCFF] from-30% opacity-80 bg-cover"
             ></div>
             <img src={selfie} className="absolute rounded-full z-10" />
           </div>
@@ -60,7 +60,7 @@ const About = () => {
   };
   return (
     <AnimatedPage>
-      <div className="min-h-screen to-[#ABDAFC] from-[#B8336A] bg-gradient-to-b flex flex-col mx-auto">
+      <div className="min-h-screen to-[#ABDAFC] to-65% from-[#B8336A] bg-gradient-to-b flex flex-col mx-auto">
         <Menu />
 
         <div id="card-loader" className="w-full flex-grow mx-auto p-9">

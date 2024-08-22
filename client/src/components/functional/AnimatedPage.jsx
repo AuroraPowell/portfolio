@@ -17,6 +17,7 @@ const AnimatedPage = ({ children }) => {
       transition={{
         type: "spring",
         duration: 2,
+        damping: 90,
       }}
     >
       {children}

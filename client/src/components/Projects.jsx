@@ -10,11 +10,20 @@ const Projects = () => {
     return (
       <div
         className="h-96 w-80 relative
-      bg-lime-500 opacity-90 rounded-3xl flex"
+      bg-lime-500 opacity-90 rounded-lg flex"
       >
-        <div className="bg-white flex-grow text-center m-3 rounded-3xl opacity-85 ">
-          <div className=" h-64 rounded-t-3xl bg-black"></div>
-          <p>Hi There</p>
+        <div className="bg-white flex-grow text-center m-3 rounded-xl opacity-85 ">
+          <div className=" h-72 rounded-t-xl bg-black"></div>
+
+          <div className="relative inline-flex w-full my-auto justify-center">
+            <p className="absolute left-0 ml-3 p-3">{name}</p>
+            <button
+              className="absolute right-0 mr-3 p-3 rounded-md
+            bg-red-400"
+            >
+              See Project
+            </button>
+          </div>
         </div>
       </div>
     );

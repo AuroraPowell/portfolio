@@ -5,8 +5,8 @@ import { BsPeopleFill } from "react-icons/bs";
 import { BsPeople } from "react-icons/bs";
 // import { RiEdit2Fill } from "react-icons/ri";
 
-import eventData from "../../database/data.json";
-import Modal from "./modal.jsx";
+import eventData from "./data.json";
+import Modal from "./Modal";
 
 import { useState, useEffect } from "react";
 import axios from "axios";
