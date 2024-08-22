@@ -21,7 +21,11 @@ const About = () => {
               className="absolute size-64 rounded-full z-20
           bg-gradient-radial from-transparent via-[#ABDAFC] via-70% to-75% to-[#E5FCFF] from-30% opacity-80 bg-cover"
             ></div>
+<<<<<<< HEAD
             <img src={selfie} className="absolute rounded-full z-10" />
+=======
+            <img src={selfie} className="absolute rounded-full size-64  z-10" />
+>>>>>>> ad5edf290ea1d28c3ec12ec23649a1a2d2434f37
           </div>
         </InRoll>
 
