@@ -9,23 +9,40 @@ const Projects = () => {
   const Card = () => {
     return (
       <div
-        className="h-96 w-80 m-1 relative
-      bg-lime-400 opacity-90 rounded-3xl"
+        className="h-96 w-80 relative
+      bg-lime-500 opacity-90 rounded-3xl flex"
       >
-        <p></p>
+        <div className="bg-white flex-grow text-center m-3 rounded-3xl opacity-85 ">
+          <div className=" h-64 rounded-t-3xl bg-black"></div>
+          <p>Hi There</p>
+        </div>
       </div>
     );
   };
   return (
     <AnimatedPage>
-      <div className="min-h-screen to-[#B8336A] from-[#C490D1] via-[#9ecdee] bg-gradient-to-b flex flex-col mx-auto">
+      <div
+        className="min-h-screen w-full flex flex-col mx-auto
+      to-[#B8336A] from-[#C490D1] bg-gradient-to-b  items-center"
+      >
         <Menu className="flex-grow" />
 
         <div
           id="card-loader"
-          className=" flex-grow mx-auto gap-3 p-9
-            grid lg:grid-cols-3 md:grid-cols-1"
+          className="pt-20 place-content-evenly flex-grow gap-x-60 gap-y-16
+            grid lg:grid-cols-2 md:grid-cols-1"
         >
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
           <Card />
           <Card />
           <Card />

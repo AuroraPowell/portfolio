@@ -8,31 +8,12 @@ import AnimatedPage from "./functional/AnimatedPage";
 
 const Landing = () => {
   const navigate = useNavigate();
+
   const Content = () => {
     return (
-      // the following stays sticky with the scrolling
-
-      <div id="coding" className="">
-        <div className="min-h-screen ">
-          <h1 className=" -skew-x-6 text-[#E5FCFF] opacity-50 p-9 font-bold text-6xl font-mono absolute bottom-56 right-0">
-            hi there. <br /> i'm a coder
-          </h1>
-          {/* // implement stuff here to load from json data about me*/}
-        </div>
-        <div
-          id="design"
-          className="p-9 text-start text-5xl text-[#E5FCFF] font-mono flex-grow font-bold "
-        >
-          and I love design
-        </div>
-        {/* Please take a moment to look at my projects */}
-        <div
-          id="welcome-in"
-          onClick={() => navigate("/projects")}
-          className="cursor-pointer mx-auto items-center rounded-2xl border-[#E5FCFF] text-[#E5FCFF] border-2 text-center mb-10 w-fit px-9"
-        >
-          <h1>Take a look</h1>
-        </div>
+      <div id="container" className="block flex-1 w-4/5 mx-auto">
+        <div id="landing-top" className="size-fit"></div>
+        <div id="landing-middle" className="text-center min-h-screen"></div>
       </div>
     );
   };
@@ -41,9 +22,10 @@ const Landing = () => {
     <AnimatedPage>
       <div
         id="landing"
-        className="flex-col flex from-[#9ecdee] bg-gradient-to-b to-[#B8336A] via-[#C490D1]"
+        className="flex-col flex min-h-screen
+        from-[#9ecdee] bg-gradient-to-b to-[#B8336A] via-[#C490D1]"
       >
-        <Menu className="fixed" />
+        <Menu />
         <Content />
         <Footer />
       </div>

@@ -16,7 +16,7 @@ const AnimatedPage = ({ children }) => {
       exit="exit"
       transition={{
         type: "spring",
-        duration: 1,
+        duration: 2,
       }}
     >
       {children}
