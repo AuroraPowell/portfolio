@@ -1,12 +1,12 @@
 "use client";
-
+import React from "react";
 import { IoIosCheckmarkCircle } from "react-icons/io";
 import { BsPeopleFill } from "react-icons/bs";
 import { BsPeople } from "react-icons/bs";
 // import { RiEdit2Fill } from "react-icons/ri";
 
-import eventData from "./data.json";
-import Modal from "./Modal";
+import eventData from "./assets/data.json";
+import Modal from "./functions/Modal";
 
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -69,15 +69,15 @@ function EventList() {
           {/* Event Info */}
           <div className="flex bg-white flex-col justify-center p-9 rounded-2xl gap-3 min-w-3.5">
             <div
-              className="bg-green-400 rounded-md justify-around inline-flex flex-nowrap 
-                            text-xl sm:text-sm md:text-md font-bold"
+              className="bg-green-400 rounded-md inline-flex flex-nowrap text-center 
+                            text-xl sm:text-sm md:text-md font-bold divide-x-4 place-content-evenly"
             >
               <h2>{event.name}</h2>
               <h2>{event.date}</h2>
               <h2>{event.loc}</h2>
             </div>
 
-            <h1 className="w-5/6 m-3 text-transparent bg-clip-text bg-gradient-to-b from-black to-slate-400">
+            <h1 className="text-xl sm:text-sm md:text-md w-5/6 m-3 text-transparent bg-clip-text bg-gradient-to-b from-black to-slate-400">
               {event.desc}
             </h1>
             <button>Read More</button>
@@ -243,7 +243,7 @@ function EventList() {
   };
 
   return (
-    <div className="flex flex-col sm:text-sm md:text-md">
+    <div className="flex flex-col sm:text-sm md:text-md min-h-screen">
       {/* <button onClick={handleClick}>
             Click here
         </button> */}

@@ -1,3 +1,6 @@
+import React from "react";
+import modalBG from "../assets/modalBG.png";
+
 export default function Modal({ open, onClose, children }) {
   const style = {
     backgroundImage: `url(${modalBG})`,

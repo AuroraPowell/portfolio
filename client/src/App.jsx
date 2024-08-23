@@ -5,11 +5,12 @@ import React from "react";
 import Projects from "./components/Projects";
 import Landing from "./components/Landing";
 import About from "./components/About";
+import Email from "./components/projects/Email.jsx";
 
 import ScrollToTop from "./components/functional/ScrollToTop";
 
 // Projects
-import eventList from "./components/projects/countme.in/eventList";
+import EventList from "./components/projects/countme.in/eventList";
 
 // Site palette (for now??)
 const colors = {
@@ -28,7 +29,8 @@ function App() {
         <Route path="/" element={<Landing />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/about" element={<About />} />
-        <Route path="/rsvp" element={eventList} />
+        <Route path="/email" element={<Email />} />
+        <Route path="/rsvp" element={<EventList />} />
       </Routes>
     </BrowserRouter>
   );
