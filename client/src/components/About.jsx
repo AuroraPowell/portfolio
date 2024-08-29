@@ -11,23 +11,18 @@ const About = () => {
   const Card = () => {
     return (
       <div
-        className="bg-cover p-3 flex flex-col items-center text-center
-      font-bold font-mono text-[#E5FCFF] mx-auto w-fit"
+        className="z-30 bg-cover p-3 flex flex-col items-center text-center
+      font-bold font-mono text-[#E5FCFF] mx-auto w-fit relative"
       >
         <InRoll>
-          <div className="relative rounded-full size-64 -mb-24">
-            <div
-              id="ball"
-              className="absolute size-64 rounded-full z-20
-          bg-gradient-radial from-transparent via-[#ABDAFC] via-75% to-80% to-[#E5FCFF] from-30% opacity-80 bg-cover"
-            ></div>
-            <img src={selfie} className="absolute rounded-full z-10" />
+          <div className="relative rounded-full lg:size-64 md:size-52 -mb-24">
+            <img src={selfie} className="absolute rounded-full" />
           </div>
         </InRoll>
 
         <div
           id="card"
-          className="z-20 relative border-[#E5FCFF] border-b-0 border-x-4
+          className="relative border-[#E5FCFF] border-b-0 border-x-4 bg-cover
           bg-[#E5FCFF] bg-gradient-to-t from-[#B8336A] via-[#C490D1]
             rounded-b-3xl w-80  "
         >

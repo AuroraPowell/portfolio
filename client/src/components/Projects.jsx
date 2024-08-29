@@ -7,7 +7,9 @@ import Menu from "./functional/menu";
 import { useNavigate } from "react-router-dom";
 import AnimatedPage from "./functional/AnimatedPage";
 
-import img from "../assets/selfie.jpg";
+// place holder image for event cards.
+import img from "../assets/placeholder.jpg";
+import divBG from "../assets/divBG.png";
 
 const Projects = () => {
   const navigate = useNavigate();
@@ -15,21 +17,21 @@ const Projects = () => {
 
   const eventProject = {
     name: "CountMe.IN",
-    desc: "Using primarily ReactJS, Express, NodeJS, and Sequelize, I was able to build a website that stores information in a server-side relational database that users can update and delete (when authenticated to do so)",
+    tech: ["React", "Express", "NodeJS", "MySQL"],
     imagePath: "",
     route: "/rsvp",
   };
 
   const emailProject = {
     name: "Email Designs",
-    desc: "Using HTML and CSS, I built a list of emails to showcase my ability to use plain HTML/CSS.",
+    tech: ["HTML", "CSS"],
     imagePath: "",
     route: "/email",
   };
 
   const videoProject = {
     name: "Video Forum",
-    desc: "Using ReactJS, I was able to build a website allows users to watch videos.",
+    tech: "Using ReactJS, I was able to build a website allows users to watch videos.",
   };
 
   // Display formatted cards with information about my work.
@@ -37,35 +39,65 @@ const Projects = () => {
 
   const Card = ({ project }) => {
     var name = project.name;
-    var desc = project.desc;
+    var tech = project.tech;
     var route = project.route;
+
+    const compositionStyle = {
+      backgroundImage: `url(${divBG})`,
+    };
 
     return (
       <div
-        className="flex relative bg-lime-500 rounded-lg opacity-90  
-      z-30 m-3"
+        className="flex flex-col rounded-l-lg 
+       z-20  md: md:mx-auto"
       >
-        <div id="project-info" className="flex flex-col w-2/5">
-          <p className="text-center p-3 bg-slate-100">{name}</p>
-          <p className="text-left m-2">{desc}</p>
-        </div>
         <div
-          id="project-pic"
-          className="bg-white w-3/5 flex-grow text-center m-3 rounded-xl opacity-85 "
+          id="project-content"
+          style={compositionStyle}
+          className="text-center m-1 rounded-l-xl h-96
+          border-r-8 border-r-white bg-white size-fit"
         >
-          <div className=" h-72 rounded-t-xl relative">
-            <img className="opacity-100 absolute start-0" src={img} />
-          </div>
-
-          <div className=" inline-flex my-auto justify-center">
-            <p></p>
-            <button
-              onClick={() => navigate(`${route}`)}
-              className="p-3 rounded-md
-            bg-red-400"
+          <div className="items-center my-auto">
+            <p
+              className="text-lime-100 text-center text-2xl font-mono font-bold
+            bg-black bg-opacity-95 w-fit mx-auto px-3 rounded-2xl my-3"
             >
-              See Project
-            </button>
+              {name}
+            </p>
+            <div
+              id="project-info"
+              className="flex flex-col bg-white divide-y-4 divide-black rounded-xl h-fit my-3 mx-9"
+            >
+              <div className="flex justify-between min-h-full items-center m-3">
+                <div className="flex flex-col mx-3 pt-2">
+                  <p
+                    className="text-white text-left text-xl
+                  bg-[#B8336A] rounded-sm px-3 rotate-2"
+                  >
+                    Technology used:
+                  </p>
+                  <ul className="text-start text-lg ml-3 my-auto flex-grow">
+                    {tech?.map((li) => {
+                      return (
+                        <li
+                          className="border-b-2 border-black text-center"
+                          key={li}
+                        >
+                          {li}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+                <button
+                  onClick={() => navigate(`${route}`)}
+                  className="bg-[#C490D1] border-4 border-lime-400 rounded-full size-28 
+                  text-white font-bold -rotate-12"
+                >
+                  See Project
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -77,15 +109,15 @@ const Projects = () => {
         className="min-h-screen w-full flex flex-col mx-auto
       to-[#B8336A] from-[#C490D1] bg-gradient-to-b  items-center"
       >
-        <Menu className="flex-grow" />
+        <Menu className="flex-grow md:bg-[#ACACDE]" />
 
         <div
           id="card-loader"
-          className="pt-20 place-content-evenly gap-x-60 gap-y-16 flex-grow
-            grid lg:grid-cols-2 md:grid-cols-1"
+          className="z-0 place-content-evenly lg:gap-x-60  flex-grow
+            grid lg:grid-cols-2 md:grid-cols-1 md:gap-x-52 "
         >
-          <Card project={emailProject} />
           <Card project={eventProject} />
+          <Card project={emailProject} />
         </div>
         <Footer className="flex-grow" />
       </div>
@@ -93,3 +125,24 @@ const Projects = () => {
   );
 };
 export default Projects;
+
+// ******************************************* //
+//      v    v             v    v
+// FORMER CARD DESIGN (May still use it, idk)  //
+//      v    v             v    v
+// ******************************************* //
+{
+  /* <div className="bg-white flex-grow text-center m-3 rounded-xl opacity-85 ">
+  <div className=" h-72 rounded-t-xl bg-black"></div>
+
+  <div className="relative inline-flex w-full my-auto justify-center">
+    <p className="absolute left-0 ml-3 p-3">{name}</p>
+    <button
+      className="absolute right-0 mr-3 p-3 rounded-md
+            bg-red-400"
+    >
+      See Project
+    </button>
+  </div>
+</div>; */
+}

@@ -1,14 +1,17 @@
 "use client";
 import React from "react";
+
+import { useState, useEffect } from "react";
 import { IoIosCheckmarkCircle } from "react-icons/io";
 import { BsPeopleFill } from "react-icons/bs";
 import { BsPeople } from "react-icons/bs";
 // import { RiEdit2Fill } from "react-icons/ri";
 
 import eventData from "./assets/data.json";
+
+// Element that wraps content and becomes visible on button click to toggle state value.
 import Modal from "./functions/Modal";
 
-import { useState, useEffect } from "react";
 import axios from "axios";
 import moment from "moment";
 
@@ -70,7 +73,7 @@ function EventList() {
           <div className="flex bg-white flex-col justify-center p-9 rounded-2xl gap-3 min-w-3.5">
             <div
               className="bg-green-400 rounded-md inline-flex flex-nowrap text-center 
-                            text-xl sm:text-sm md:text-md font-bold divide-x-4 place-content-evenly"
+              text-xl sm:text-sm md:text-md font-bold place-content-evenly"
             >
               <h2>{event.name}</h2>
               <h2>{event.date}</h2>
@@ -84,13 +87,13 @@ function EventList() {
           </div>
 
           {/* RSVP count and Edit RSVP button */}
-          <div className="flex flex-col text-xl gap-8">
+          <div className="text-xl gap-8 ">
             <div className="flex flex-col text-white gap-3 justify-center items-center p-9">
               <button
                 onClick={() => (
                   setToggleGoing(true), setEventFocus(event), setOpen(true)
                 )}
-                className="bg-green-500 rounded-lg inline-flex p-3 gap-1 cursor-pointer"
+                className="bg-green-500 justify-center rounded-lg inline-flex p-3 gap-x-1 cursor-pointer"
               >
                 <BsPeopleFill /> {goingList.length}
               </button>
@@ -98,9 +101,9 @@ function EventList() {
                 onClick={() => (
                   setToggleGoing(false), setEventFocus(event), setOpen(true)
                 )}
-                className="bg-red-400   rounded-lg inline-flex p-3 gap-1 cursor-pointer"
+                className="bg-red-400 justify-center rounded-lg inline-flex p-3 gap-x-1 cursor-pointer"
               >
-                <BsPeople /> {notGoingList.length}
+                <BsPeople /> <p> {notGoingList.length}</p>
               </button>
 
               {/* <button 
@@ -141,7 +144,7 @@ function EventList() {
     };
 
     return (
-      <div>
+      <div className="">
         {listOfEvents}
 
         {/* RSVP List Modal */}
@@ -243,14 +246,11 @@ function EventList() {
   };
 
   return (
-    <div className="flex flex-col sm:text-sm md:text-md min-h-screen">
-      {/* <button onClick={handleClick}>
-            Click here
-        </button> */}
-
-      <div className="pt-10 pb-5 flex-col mx-auto">
+    <div className="flex flex-col sm:text-sm md:text-md bg-slate-50  ">
+      <div className="flex-col mx-auto min-h-screen bg-pink-50">
+        <h1 className="text-pink-400 m-3 ">CountMe.IN</h1>
         {/* Events Component Header */}
-        <div className="bg-pink-400 opacity-80 w-fit rounded-t-lg rounded-b-lg flex flex-col justify-center items-center">
+        <div className="bg-pink-400 opacity-80 w-fit  rounded-t-lg rounded-b-lg flex flex-col justify-center items-center">
           <>
             <div className="flex justify-between items-center p-3 gap-3">
               <h1 className="text-white font-bold text-center text-3xl ">
