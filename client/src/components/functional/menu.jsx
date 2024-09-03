@@ -11,7 +11,7 @@ const Menu = () => {
       id="menu"
       className="flex h-36 w-full  sticky top-0 md:m-3 sm:m-3 md:z-30 sm:z-30
       items-center  text-center text-[rgb(229,252,255)] font-bold
-       md:h-24 md:mt-0 sm:h-14 sm:mt-0"
+       md:h-24 md:mt-0 sm:h-14 sm:mt-0 justify-around"
     >
       <div
         id="icon"

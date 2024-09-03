@@ -17,7 +17,7 @@ const InRoll = ({ children }) => {
       exit="exit"
       viewport={{ once: true }}
       transition={{
-        duration: 0.45,
+        duration: 0.4,
         type: "spring",
         damping: 30,
       }}

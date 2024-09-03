@@ -15,24 +15,41 @@ const Projects = () => {
   const navigate = useNavigate();
   const [projectFocus, setProjectFocus] = useState({});
 
-  const eventProject = {
+  const eventProj = {
     name: "CountMe.IN",
     tech: ["React", "Express", "NodeJS", "MySQL"],
     imagePath: "",
     route: "/rsvp",
+    finished: true,
   };
 
-  const emailProject = {
+  const emailProj = {
     name: "Email Designs",
     tech: ["HTML", "CSS"],
     imagePath: "",
     route: "/email",
+    finished: false,
   };
-
-  const videoProject = {
-    name: "Video Forum",
-    tech: "Using ReactJS, I was able to build a website allows users to watch videos.",
-  };
+  // const projList = [
+  //   {
+  //     name: "CountMe.IN",
+  //     tech: ["React", "Express", "NodeJS", "MySQL"],
+  //     imagePath: "",
+  //     route: "/rsvp",
+  //     finished: true,
+  //   },
+  //   {
+  //     name: "Video Forum",
+  //     tech: "Using ReactJS, I was able to build a website allows users to watch videos.",
+  //   },
+  //   {
+  //     name: "Email Designs",
+  //     tech: ["HTML", "CSS"],
+  //     imagePath: "",
+  //     route: "/email",
+  //     finished: false,
+  //   },
+  // ];
 
   // Display formatted cards with information about my work.
   // Responsive idea: Diff card sizes on smaller/larger screen
@@ -47,20 +64,18 @@ const Projects = () => {
     };
 
     return (
-      <div
-        className="flex flex-col rounded-l-lg 
-       z-20  md: md:mx-auto"
-      >
+      <div className="flex flex-col rounded-l-lg z-20 md:mx-auto ">
         <div
           id="project-content"
           style={compositionStyle}
           className="text-center m-1 rounded-l-xl h-96
-          border-r-8 border-r-white bg-white size-fit"
+          border-r-8 border-r-white bg-white"
         >
-          <div className="items-center my-auto">
+          <div className="place-content-stretch">
             <p
-              className="text-lime-100 text-center text-2xl font-mono font-bold
-            bg-black bg-opacity-95 w-fit mx-auto px-3 rounded-2xl my-3"
+              className="text-lime-50 text-center text-2xl font-mono font-bold
+            bg-black bg-opacity-95 w-fit mx-auto px-3 my-3
+            "
             >
               {name}
             </p>
@@ -91,8 +106,11 @@ const Projects = () => {
                 </div>
                 <button
                   onClick={() => navigate(`${route}`)}
-                  className="bg-[#C490D1] border-4 border-lime-400 rounded-full size-28 
-                  text-white font-bold -rotate-12"
+                  className="bg-lime-300 rounded-full size-28
+                  border-l-2 border-b-2 border-t-2 border-r-0 border-fuchsia-950 
+                  text-fuchsia-950 font-bold -rotate-12 
+                   before:absolute before:-my-11 before:mx-12 before:w-24 before:h-10 before:rotate-45 
+                   overflow-hidden before:bg-red-300 before:bg-opacity-40 before:z-50 before:border-b-2 before:border-b-black before:rounded-t-full"
                 >
                   See Project
                 </button>
@@ -106,18 +124,21 @@ const Projects = () => {
   return (
     <AnimatedPage>
       <div
-        className="min-h-screen w-full flex flex-col mx-auto
+        className="min-h-screen w-full mx-auto
       to-[#B8336A] from-[#C490D1] bg-gradient-to-b  items-center"
       >
         <Menu className="flex-grow md:bg-[#ACACDE]" />
 
         <div
           id="card-loader"
-          className="z-0 place-content-evenly lg:gap-x-60  flex-grow
-            grid lg:grid-cols-2 md:grid-cols-1 md:gap-x-52 "
+          className="z-0 
+            grid lg:grid-cols-2 md:grid-cols-1 mx-auto"
         >
-          <Card project={eventProject} />
-          <Card project={emailProject} />
+          <Card project={eventProj} />
+          <Card
+            project={emailProj}
+            className="bg-cover bg-white bg-opacity-50"
+          />
         </div>
         <Footer className="flex-grow" />
       </div>

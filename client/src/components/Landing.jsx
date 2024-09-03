@@ -22,7 +22,7 @@ const Landing = () => {
     <AnimatedPage>
       <div
         id="landing"
-        className="flex-col flex min-h-screen
+        className="flex flex-col min-h-screen
         from-[#9ecdee] bg-gradient-to-b to-[#B8336A] via-[#C490D1]"
       >
         <Menu />
