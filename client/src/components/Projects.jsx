@@ -109,6 +109,7 @@ const Projects = () => {
                   className="bg-lime-300 rounded-full size-28
                   border-l-2 border-b-2 border-t-2 border-r-0 border-fuchsia-950 
                   text-fuchsia-950 font-bold -rotate-12 
+                  hover:text-lime-300 hover:bg-fuchsia-950 hover:before:bg-yellow-300 hover:before:bg-opacity-40
                    before:absolute before:-my-11 before:mx-12 before:w-24 before:h-10 before:rotate-45 
                    overflow-hidden before:bg-red-300 before:bg-opacity-40 before:z-50 before:border-b-2 before:border-b-black before:rounded-t-full"
                 >
