@@ -68,13 +68,13 @@ const Projects = () => {
         <div
           id="project-content"
           style={compositionStyle}
-          className="text-center m-1 rounded-l-xl h-96
+          className="text-center m-1 rounded-l-xl p-3 h-80
           border-r-8 border-r-white bg-white"
         >
-          <div className="place-content-stretch">
+          <div className="items-end">
             <p
               className="text-lime-50 text-center text-2xl font-mono font-bold
-            bg-black bg-opacity-95 w-fit mx-auto px-3 my-3
+            bg-black bg-opacity-95 w-fit mx-auto px-3 
             "
             >
               {name}
