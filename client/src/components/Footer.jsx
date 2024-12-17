@@ -1,9 +1,13 @@
 import React from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 const Footer = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const {host, pathname, key} = location
   return (
     <div
-      className="flex flex-row h-28 mt-9 w-full justify-around text-right 
-    font-thin font-mono text-[#E5FCFF] bottom-0"
+      className={`flex flex-row h-28 mt-9 w-svw justify-around text-right 
+    font-thin font-mono ${pathname === "/about" ? `text-fuchsia-950` : `text-white`}`}
     >
       <div id="phrase">Discerning would ruin it.</div>
       <p className="text-center">

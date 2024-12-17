@@ -12,7 +12,7 @@ const Landing = () => {
   const Content = () => {
     return (
       <div id="container" className="block flex-1 w-4/5 mx-auto">
-        <div id="landing-top" className="size-fit"></div>
+        <div id="landing-top" className=""><p>Thanks for checking out my portfolio.<br></br>Please have a look around. You never know what halls I'll be excavating out next.</p></div>
         <div id="landing-middle" className="text-center min-h-screen"></div>
       </div>
     );
@@ -22,7 +22,7 @@ const Landing = () => {
     <AnimatedPage>
       <div
         id="landing"
-        className="flex flex-col min-h-screen
+        className="flex flex-col min-h-screen overflow-hidden
         from-[#9ecdee] bg-gradient-to-b to-[#B8336A] via-[#C490D1]"
       >
         <Menu />

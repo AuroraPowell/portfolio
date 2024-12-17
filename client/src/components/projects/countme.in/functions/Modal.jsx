@@ -1,13 +1,13 @@
 import React from "react";
 import modalBG from "../assets/modalBG.png";
+import newBG from "../../../../assets/divBG.png"
 
 export default function Modal({ open, onClose, children }) {
   const style = {
-    backgroundImage: `url(${modalBG})`,
+    backgroundImage: `url(${newBG})`,
   };
 
   return (
-    //backdrop
     <div
       onClick={onClose}
       className={`
@@ -20,7 +20,7 @@ export default function Modal({ open, onClose, children }) {
         onClick={(e) => e.stopPropagation()}
         style={style}
         className={`
-                    bg-white text-black rounded-3xl shadow p-6 transition-all bg-cover
+                    bg-pink-300 text-black rounded-3xl shadow p-6 transition-all bg-cover
                     ${open ? "scale-100 opacity-100" : "scale 125 opacity-0"}
                 `}
       >

@@ -21,6 +21,7 @@ const Projects = () => {
     imagePath: "",
     route: "/rsvp",
     finished: true,
+    blurb: "I created a client/server application that inserted, edited, and removed values from a SQL table stored in CPanel"
   };
 
   const emailProj = {
@@ -29,27 +30,8 @@ const Projects = () => {
     imagePath: "",
     route: "/email",
     finished: false,
+    blurb: "I've recreated various marketing emails I've received and have designed some of my own."
   };
-  // const projList = [
-  //   {
-  //     name: "CountMe.IN",
-  //     tech: ["React", "Express", "NodeJS", "MySQL"],
-  //     imagePath: "",
-  //     route: "/rsvp",
-  //     finished: true,
-  //   },
-  //   {
-  //     name: "Video Forum",
-  //     tech: "Using ReactJS, I was able to build a website allows users to watch videos.",
-  //   },
-  //   {
-  //     name: "Email Designs",
-  //     tech: ["HTML", "CSS"],
-  //     imagePath: "",
-  //     route: "/email",
-  //     finished: false,
-  //   },
-  // ];
 
   // Display formatted cards with information about my work.
   // Responsive idea: Diff card sizes on smaller/larger screen
@@ -58,20 +40,26 @@ const Projects = () => {
     var name = project.name;
     var tech = project.tech;
     var route = project.route;
+    var blurb = project.blurb
 
     const compositionStyle = {
       backgroundImage: `url(${divBG})`,
     };
 
-    return (
-      <div className="flex flex-col rounded-l-lg z-20 md:mx-auto ">
+    const [isMobile, setIsMobile] = useState(false)
+
+    // const wideCardStyle = {``};
+    // const tallCardStyle = {``};
+    const finalCardStyle =  (
         <div
           id="project-content"
           style={compositionStyle}
-          className="text-center m-1 rounded-l-xl p-3 h-80
-          border-r-8 border-r-white bg-white"
+          className="flex flex-col bg-cyan-400  rounded-l-xl p-3 lg:h-[480px] lg:w-[400px] z-40
+          border-r-8 border-r-white shadow-md shadow-stone-900
+          text-center mx-auto md:flex md:flex-row md:w-[500px] md:h-64 
+           "
         >
-          <div className="items-end">
+          <div className="mx-auto h-fit">
             <p
               className="text-lime-50 text-center text-2xl font-mono font-bold
             bg-black bg-opacity-95 w-fit mx-auto px-3 
@@ -81,17 +69,17 @@ const Projects = () => {
             </p>
             <div
               id="project-info"
-              className="flex flex-col bg-white divide-y-4 divide-black rounded-xl h-fit my-3 mx-9"
+              className="p-3 flex items-stretch md:flex-row bg-white divide-y-4 divide-black rounded-lg"
             >
-              <div className="flex justify-between min-h-full items-center m-3">
-                <div className="flex flex-col mx-3 pt-2">
+              <div className="flex justify-around min-h-full items-center ">
+                <div className="flex flex-col w-fit mx-3 pt-2 ">
                   <p
-                    className="text-white text-left text-xl
+                    className="text-white text-left text-lg
                   bg-[#B8336A] rounded-sm px-3 rotate-2"
                   >
                     Technology used:
                   </p>
-                  <ul className="text-start text-lg ml-3 my-auto flex-grow">
+                  <ul className="text-start font-semibold text-lg ml-3 my-auto flex-grow">
                     {tech?.map((li) => {
                       return (
                         <li
@@ -109,6 +97,7 @@ const Projects = () => {
                   className="bg-lime-300 rounded-full size-28
                   border-l-2 border-b-2 border-t-2 border-r-0 border-fuchsia-950 
                   text-fuchsia-950 font-bold -rotate-12 
+                  
                   hover:text-lime-300 hover:bg-fuchsia-950 hover:before:bg-yellow-300 hover:before:bg-opacity-40
                    before:absolute before:-my-11 before:mx-12 before:w-24 before:h-10 before:rotate-45 
                    overflow-hidden before:bg-red-300 before:bg-opacity-40 before:z-50 before:border-b-2 before:border-b-black before:rounded-t-full"
@@ -117,31 +106,40 @@ const Projects = () => {
                 </button>
               </div>
             </div>
+            <div 
+            className="text-xs bg-fuchsia-400 shadow-md shadow-slate-800 
+            size-44 rounded-md rotate-3 
+            mx-auto mt-14 mr-20
+            ">
+              <p className="font-sans text-wrap text-zinc-950 text-left tracking-wide font-bold p-3">{blurb}</p>
+            </div>
           </div>
         </div>
-      </div>
     );
+
+    return (finalCardStyle)
   };
   return (
     <AnimatedPage>
       <div
-        className="min-h-screen w-full mx-auto
-      to-[#B8336A] from-[#C490D1] bg-gradient-to-b  items-center"
+        className="min-h-screen overflow-hidden flex flex-col
+      to-[#B8336A] from-[#C490D1] bg-gradient-to-b"
       >
-        <Menu className="flex-grow md:bg-[#ACACDE]" />
+        <Menu />
 
         <div
           id="card-loader"
-          className="z-0 
-            grid lg:grid-cols-2 md:grid-cols-1 mx-auto"
+          className="flex flex-col flex-grow"
         >
-          <Card project={eventProj} />
-          <Card
-            project={emailProj}
-            className="bg-cover bg-white bg-opacity-50"
-          />
+          <div className="grid lg:grid-cols-2 md:grid-cols-1 md:gap-y-9 sm:grid-cols-1 sm:gap-y-9 gap-x-48">
+
+            <Card project={eventProj} className="flex-1"/>
+            <Card
+              project={emailProj} className="flex-1"
+            />
+          </div>
         </div>
-        <Footer className="flex-grow" />
+        <Footer />
       </div>
     </AnimatedPage>
   );

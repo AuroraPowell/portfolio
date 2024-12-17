@@ -12,7 +12,7 @@ const About = () => {
     return (
       <div
         className="z-30 bg-cover p-3 flex flex-col items-center text-center
-      font-bold font-mono text-[#E5FCFF] mx-auto w-fit relative"
+      font-bold font-mono text-[#E5FCFF] mx-auto relative"
       >
         <InRoll>
           <div className="relative rounded-full lg:size-64 md:size-52 -mb-24">
@@ -55,10 +55,10 @@ const About = () => {
   };
   return (
     <AnimatedPage>
-      <div className="min-h-screen to-[#ABDAFC] to-65% from-[#B8336A] bg-gradient-to-b flex flex-col mx-auto">
+      <div className="min-h-screen to-[#ABDAFC] to-65% from-[#B8336A] bg-gradient-to-b flex flex-col mx-auto  overflow-hidden">
         <Menu />
 
-        <div id="card-loader" className="w-full flex-grow mx-auto p-9">
+        <div id="card-loader" className="flex-grow mx-auto p-9">
           <Card />
         </div>
         <Footer />
