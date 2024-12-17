@@ -3,9 +3,16 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { WiMoonAltWaxingCrescent3 } from "react-icons/wi";
+import { useState } from "react";
 
 const Menu = () => {
+  const [nav, setNav] = useState(false);
   const navigate = useNavigate();
+
+  const handleNav = () => {
+    setNav(!nav)
+  }
+
   const framework = (
     <div
       id="menu"
@@ -23,7 +30,15 @@ const Menu = () => {
         </div>
       </div>
       <div className="flex relative flex-grow items-center ">
-        <div className=" flex-grow invisible lg:visible gap-10">
+
+
+          {/* ----------------
+          
+          v FIX THIS, STYLISTICALLY v
+          
+          --------------------- */}
+
+        <div className={nav ? "absolute top-0 right-0 bg-purple-950 w-96 h-32" : "flex-grow invisible lg:visible gap-10"}>
           <button onClick={() => navigate("/")} className="px-3">
             home
           </button>
@@ -34,7 +49,7 @@ const Menu = () => {
         </div>
       </div>
 
-      <button className="absolute right-0 text-3xl mx-9 font-bold lg:invisible visible">
+      <button onClick={handleNav} className="absolute right-0 text-3xl mx-9 font-bold lg:invisible visible">
         <GiHamburgerMenu />
       </button>
       {/* <WiMoonAltWaxingCrescent3

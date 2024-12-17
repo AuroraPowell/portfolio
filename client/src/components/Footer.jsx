@@ -6,11 +6,11 @@ const Footer = () => {
   const {host, pathname, key} = location
   return (
     <div
-      className={`flex flex-row h-28 mt-9 w-svw justify-around text-right 
+      className={`flex flex-row h-28 mt-9 space-x-32 w-svw justify-center items-stretch text-right 
     font-thin font-mono ${pathname === "/about" ? `text-fuchsia-950` : `text-white`}`}
     >
-      <div id="phrase">Discerning would ruin it.</div>
-      <p className="text-center">
+      {/* <div id="phrase">Discerning would ruin it.</div> */}
+      <p className="text-left">
         Troy, <br></br>New York
       </p>
       <div id="social" className="text-right">

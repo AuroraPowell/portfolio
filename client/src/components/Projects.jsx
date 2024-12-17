@@ -50,7 +50,7 @@ const Projects = () => {
 
     // const wideCardStyle = {``};
     // const tallCardStyle = {``};
-    const finalCardStyle =  (
+    const retiredCardStyle =  (
         <div
           id="project-content"
           style={compositionStyle}
@@ -117,31 +117,33 @@ const Projects = () => {
         </div>
     );
 
+    const finalCardStyle = (
+      <div id="card-border" className="bg-white w-3/5 h-1/3">
+        <div id="image">
+          </div>
+        <div id="info">
+        </div>
+      </div>
+    )
+
     return (finalCardStyle)
   };
   return (
-    <AnimatedPage>
+    // <AnimatedPage>
       <div
         className="min-h-screen overflow-hidden flex flex-col
       to-[#B8336A] from-[#C490D1] bg-gradient-to-b"
       >
         <Menu />
 
-        <div
-          id="card-loader"
-          className="flex flex-col flex-grow"
-        >
-          <div className="grid lg:grid-cols-2 md:grid-cols-1 md:gap-y-9 sm:grid-cols-1 sm:gap-y-9 gap-x-48">
-
-            <Card project={eventProj} className="flex-1"/>
-            <Card
-              project={emailProj} className="flex-1"
-            />
-          </div>
-        </div>
+        <Card project={eventProj} className="flex-1"/>
+        <Card
+          project={emailProj} className="flex-1"
+        />
+        
         <Footer />
       </div>
-    </AnimatedPage>
+    // </AnimatedPage>
   );
 };
 export default Projects;
@@ -166,3 +168,14 @@ export default Projects;
   </div>
 </div>; */
 }
+
+
+// former card containers grid system
+{/* <div
+          id="card-loader"
+          className="flex flex-col flex-grow"
+        >
+          <div className="grid lg:grid-cols-2 md:grid-cols-1 md:gap-y-9 sm:grid-cols-1 sm:gap-y-9 gap-x-48">
+
+          </div>
+        </div> */}

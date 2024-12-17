@@ -14,11 +14,11 @@ const About = () => {
         className="z-30 bg-cover p-3 flex flex-col items-center text-center
       font-bold font-mono text-[#E5FCFF] mx-auto relative"
       >
-        <InRoll>
-          <div className="relative rounded-full lg:size-64 md:size-52 -mb-24">
+        {/* <InRoll> */}
+          <div className="relative z-30 rounded-full lg:size-64 md:size-52 -mb-24">
             <img src={selfie} className="absolute rounded-full" />
           </div>
-        </InRoll>
+        {/* </InRoll> */}
 
         <div
           id="card"
@@ -35,7 +35,7 @@ const About = () => {
             <p className="py-3 text-xl lowercase">Aurora Powell</p>
             <div className="gap-9 pt-3">
               <p className="font-light p-2 ">
-                I am a full stack developer that has 10 years experience in
+                I am a full stack developer that has 6 years experience in
                 front-end web development. I graduated from Bridgewater College
                 with a Bachelor's Degree in Computer Science with a minor in
                 Art.{" "}
