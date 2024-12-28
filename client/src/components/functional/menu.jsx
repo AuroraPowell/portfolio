@@ -38,7 +38,7 @@ const Menu = () => {
           
           --------------------- */}
 
-        <div className={nav ? "absolute top-0 right-0 bg-purple-950 w-96 h-32" : "flex-grow invisible lg:visible gap-10"}>
+        <div className={nav ? "bg-purple-700 bg-opacity-30 w-full min-h-screen absolute m-10" : "flex-grow invisible lg:visible gap-10"}>
           <button onClick={() => navigate("/")} className="px-3">
             home
           </button>

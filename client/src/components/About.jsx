@@ -8,6 +8,13 @@ import AnimatedPage from "./functional/AnimatedPage";
 import InRoll from "./functional/inRoll";
 
 const About = () => {
+
+  const info = (<p className="font-light p-2 ">
+    I am a full stack developer that has 6 years experience in
+    front-end web development. I graduated from Bridgewater College
+    with a Bachelor's Degree in Computer Science with a minor in
+    Art.{" "}
+  </p>)
   const Card = () => {
     return (
       <div
@@ -34,12 +41,8 @@ const About = () => {
           <div className="flex-grow flex-col p-9 pt-0 gap-2 divide-y-2 text-[#E5FCFF] divide-[#B8336A]">
             <p className="py-3 text-xl lowercase">Aurora Powell</p>
             <div className="gap-9 pt-3">
-              <p className="font-light p-2 ">
-                I am a full stack developer that has 6 years experience in
-                front-end web development. I graduated from Bridgewater College
-                with a Bachelor's Degree in Computer Science with a minor in
-                Art.{" "}
-              </p>
+              {info}
+              
               <button
                 className="tracking-widest lowercase rounded-xl
                m-3 p-3 px-9 bg-transparent border-2 border-[#E5FCFF]
@@ -56,6 +59,7 @@ const About = () => {
   return (
     <AnimatedPage>
       <div className="min-h-screen to-[#ABDAFC] to-65% from-[#B8336A] bg-gradient-to-b flex flex-col mx-auto  overflow-hidden">
+        /* Put in viewpoint breaks for mobile menu. */
         <Menu />
 
         <div id="card-loader" className="flex-grow mx-auto p-9">

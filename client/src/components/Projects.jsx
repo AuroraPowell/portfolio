@@ -126,7 +126,7 @@ const Projects = () => {
       </div>
     )
 
-    return (finalCardStyle)
+    return (retiredCardStyle)
   };
   return (
     // <AnimatedPage>
@@ -134,6 +134,8 @@ const Projects = () => {
         className="min-h-screen overflow-hidden flex flex-col
       to-[#B8336A] from-[#C490D1] bg-gradient-to-b"
       >
+
+        /* Put in viewpoint breaks for mobile menu. */
         <Menu />
 
         <Card project={eventProj} className="flex-1"/>
