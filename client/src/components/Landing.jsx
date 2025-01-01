@@ -16,7 +16,7 @@ const Landing = () => {
         {/* <div id="landing-top" className=""><p>Thanks for checking out my portfolio.<br></br>Please have a look around. You never know what halls I'll be excavating out next.</p></div> */}
         <div id="shape" className="border-4 inset-32">
           
-          <div id="upper" className="bg-transparent align-bottom text-white text-3xl font-bold min-h-72 m-9">
+          <div id="upper" className="bg-red-900 align-bottom text-white text-3xl font-bold min-h-72 m-9">
             
           </div>
           <div id="lower"></div>
