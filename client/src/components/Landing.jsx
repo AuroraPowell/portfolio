@@ -18,19 +18,23 @@ const Landing = () => {
           
           <div id="upper" className="bg-slate-100 bg-opacity-50 align-bottom 
           text-white text-3xl font-bold 
-          min-h-72 m-9 flex flex-row">
-            <div id="sidebar" className="1/5 bg-cyan-900">
-              <ul>
-                <li>Series One</li>
-                <li>Series Two</li>
+          min-h-72 m-9 flex flex-row ">
+            <div id="sidebar" className="text-right pr-9 bg-cyan-900 flex-grow flex m-3 ">
+              <ul className="my-auto grid grid-cols-1 gap-y-9">
+                <li className="p-3">Series One</li>
+                <li className="p-3">Series Two</li>
               </ul>
             </div>
-            <div id="artContainer" className="4/5 bg-slate-600 w-full
-            grid grid-cols-2">
-              <p className="bg-red-400 text-black">include a change to styling</p>
-              <p className="bg-cyan-400 ">hello</p>
-              <p className="bg-red-400 ">hello</p>
-              <p className="bg-cyan-400 ">hello</p>
+            <div id="artContainer" className="grid grid-cols-2 w-4/5">
+                {/* vvv 
+                NEED TO CREATE ART CARDS, MODAL WHEN CLICKED, ALLOW NAV IN MODAL (left/right),
+                and also 
+                flex to fill body
+                vvv */}
+              <p className="bg-red-400 text-black p-3 m-2">include a change to styling</p>
+              <p className="bg-cyan-400 p-3 m-2">hello</p>
+              <p className="bg-red-400 p-3 m-2">hello</p>
+              <p className="bg-cyan-400 p-3 m-2">hello</p>
             </div>
           </div>
           <div id="lower"></div>
