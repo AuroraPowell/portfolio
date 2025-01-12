@@ -1,0 +1,43 @@
+[
+    {
+        "title": "Tethered",
+        "year": "2020",
+        "medium": "acrylic on canvas",
+        "size": "19x19",
+        "imgPath": "./art-pieces/triptych/tethered.jpg",
+        "series": "triptych"
+    },
+    {
+        "title": "No Release",
+        "year": "2020",
+        "medium": "acrylic on canvas", 
+        "size": "19x19",
+        "imgPath": "./art-pieces/triptych/no-release.jpg",
+        "series": "triptych"
+    },
+    {
+        "title": "In Bloom",
+        "year": "2020",
+        "medium": "acrylic on canvas", 
+        "size": "19x19",
+        "imgPath": "./art-pieces/triptych/in-bloom.jpg",
+        "series": "triptych"
+    },
+    {
+        "title": "Beacon Beckoned",
+        "year": "2022",
+        "medium": "acrylic on canvas", 
+        "size": "19x22",
+        "imgPath": "./art-pieces/beaconed-beckoned.jpg",
+        "series": "wet"
+    },
+    {
+        "title": "Serpentine Self and the Ensnared Ego",
+        "year": "2022",
+        "medium": "acrylic on canvas", 
+        "size": "36x20",
+        "imgPath": "./art-pieces/serpentine.jpg",
+        "series": "wet"
+    }
+    
+]
