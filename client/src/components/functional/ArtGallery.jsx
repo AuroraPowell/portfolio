@@ -5,13 +5,16 @@ import data from "../art-pieces/art.json";
 import Modal from "../projects/countme.in/functions/Modal";
 
 const ArtGallery = () => {
-  const [open, setOpen] = useState(false);
+  
 
+  const [artList, setArtList] = useState(data)
+
+  const [modalOpen, setModalOpen] = useState(false);
   const [artFocus, setArtFocus] = useState();
   const [seriesFocus, setSeriesFocus] = useState();
 
   // creates responsively created list from mapping JSON file
-  const CreateGallery = () => {
+  const CreateSidebar = () => {
     let seriesTitles = [];
     let list = [];
 
@@ -20,10 +23,6 @@ const ArtGallery = () => {
         seriesTitles.push(art.series);
       }
     });
-
-    const createList = () => {
-      return <div></div>;
-    };
 
     function handleClick(selection) {
       setSeriesFocus(selection);
@@ -48,10 +47,46 @@ const ArtGallery = () => {
     );
   };
 
+  // Art Object
+  const Art = (props) => {
+    let title = props.title
+    let year = props.year
+    let medium = props.medium
+    let size = props.size
+    let url = props.imgPath
+    let series = props.series
+
+    return (
+      // display art, alt text, and hover info
+      <div >
+
+      </div>
+    )
+  }
+
+  // creates list of Art Objects
+  const sortedArt = () => {
+    let list = []
+
+    // STEPS NEEDED
+    // check seriesFocus, load images with same series tag
+    // if no seriesFocus, load all images 
+    // map artList and create Art objects for each
+
+    return(
+      <div>
+        // list of Art objects
+        {artList.map((art) => {
+          <Art id={art.title} props={art}/>
+        })}
+      </div>
+    )
+  }
+
   return (
     <div>
-      <Modal open={open} onClose={() => setOpen(false)}></Modal>
-      <CreateGallery />
+      <Modal open={modalOpen} onClose={() => setModalOpen(false)}></Modal>
+      <CreateSidebar />
     </div>
   );
 };
