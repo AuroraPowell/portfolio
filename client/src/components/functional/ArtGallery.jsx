@@ -11,7 +11,7 @@ const ArtGallery = () => {
 
   const [modalOpen, setModalOpen] = useState(false);
   const [artFocus, setArtFocus] = useState();
-  const [seriesFocus, setSeriesFocus] = useState();
+  const [seriesFocus, setSeriesFocus] = useState("");
 
   // creates responsively created list from mapping JSON file
   const CreateSidebar = () => {
@@ -25,20 +25,23 @@ const ArtGallery = () => {
     });
 
     function handleClick(selection) {
-      setSeriesFocus(selection);
+      let value = selection
+      console.log(value)
+      setSeriesFocus(value);
+      
     }
 
     return (
       <div className="text-slate-100 text-8xl italic font-bold text-end my-auto px-36">
         <div className="flex justify-evenly ">
-          {seriesTitles.map((series) => {
+          {seriesTitles.map((list) => {
             return (
               <button
-                key={series}
+                key={list}
                 className="text-5xl  hover:text-slate-900"
-                onClick={() => handleClick(series)}
+                onClick={() => handleClick(list)}
               >
-                {series}
+                {list}
               </button>
             );
           })}
@@ -47,38 +50,46 @@ const ArtGallery = () => {
     );
   };
 
-  // Art Object
-  const Art = (props) => {
-    let title = props.title
-    let year = props.year
-    let medium = props.medium
-    let size = props.size
-    let url = props.imgPath
-    let series = props.series
-
-    return (
-      // display art, alt text, and hover info
-      <div >
-
-      </div>
-    )
-  }
+  
 
   // creates list of Art Objects
-  const sortedArt = () => {
+  const CreateGallery = () => {
     let list = []
 
     // STEPS NEEDED
     // check seriesFocus, load images with same series tag
     // if no seriesFocus, load all images 
     // map artList and create Art objects for each
+    seriesFocus == "" ? data.map((art) => { list.push(art) }) 
+    : (data.map((art) => { 
+        if(!list.includes(art)){
+          if(art.series == seriesFocus){
+            list.push(art)
+          }
+        }}))
 
-    return(
+        // Art Object
+  const Art = (obj) => {
+    console.log(obj)
+    // let title =   artObj.title
+    // let year =    artObj.year
+    // let medium =  artObj.medium
+    // let size =    artObj.size
+    // let url =     artObj.url
+    // let series =  artObj.series
+
+    // console.log(obj)
+    return (
+      // display art, alt text, and hover info
+      <div >
+        <p>{obj.title}</p>
+      </div>
+    )
+  }
+    
+    return (
       <div>
-        // list of Art objects
-        {artList.map((art) => {
-          <Art id={art.title} props={art}/>
-        })}
+        {list.map((art) => {return(<Art id={art.title} obj={art} />)})}
       </div>
     )
   }
