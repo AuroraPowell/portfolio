@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
-import data from "/public/art/art.json";
+import data from "./art.json";
 import Modal from "../projects/countme.in/functions/Modal";
 
 const ArtGallery = () => {
@@ -94,7 +94,7 @@ const ArtGallery = () => {
 
     return (
       <div>
-        <ul className="flex flex-row">
+        <ul className="flex flex ">
           {list.map((art) => (
             <ArtCard id={art.title} art={art} />
           ))}

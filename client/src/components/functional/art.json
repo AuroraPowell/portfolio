@@ -4,7 +4,7 @@
         "year": "2020",
         "medium": "acrylic on canvas",
         "size": "19x19",
-        "imgPath": "./public/art/triptych/tethered.jpg",
+        "imgPath": "/art/triptych/tethered.JPG",
         "series": "triptych"
     },
     {
@@ -12,7 +12,7 @@
         "year": "2020",
         "medium": "acrylic on canvas", 
         "size": "19x19",
-        "imgPath": "./public/art/triptych/no-release.jpg",
+        "imgPath": "/art/triptych/no-release.JPG",
         "series": "triptych"
     },
     {
@@ -20,7 +20,7 @@
         "year": "2020",
         "medium": "acrylic on canvas", 
         "size": "19x19",
-        "imgPath": "./public/art/triptych/in-bloom.jpg",
+        "imgPath": "/art/triptych/in-bloom.JPG",
         "series": "triptych"
     },
     {
@@ -28,7 +28,7 @@
         "year": "2022",
         "medium": "acrylic on canvas", 
         "size": "19x22",
-        "imgPath": "./public/art/beacon-beckoned.JPG",
+        "imgPath": "/art/beacon-beckoned.JPG",
         "series": "wet"
     },
     {
@@ -36,7 +36,7 @@
         "year": "2022",
         "medium": "acrylic on canvas", 
         "size": "36x20",
-        "imgPath": "./public/art/serpentine.jpg",
+        "imgPath": "/art/serpentine.JPG",
         "series": "wet"
     }
     
