@@ -5,9 +5,7 @@ import data from "./art.json";
 import Modal from "../projects/countme.in/functions/Modal";
 
 const ArtGallery = () => {
-  
-
-  const [artList, setArtList] = useState(data)
+  const [artList, setArtList] = useState(data);
 
   const [modalOpen, setModalOpen] = useState(false);
   const [artFocus, setArtFocus] = useState();
@@ -24,10 +22,9 @@ const ArtGallery = () => {
     });
 
     function handleClick(selection) {
-      let value = selection
+      let value = selection;
       // console.log(value)
       setSeriesFocus(value);
-      
     }
 
     return (
@@ -39,12 +36,10 @@ const ArtGallery = () => {
                 key={list}
                 className="text-5xl  hover:text-slate-900"
                 onClick={() => {
-
                   handleClick(list);
-                  console.log("Series is: " + list)
-                  setArtList(list)                  
-                }
-                }
+                  console.log("Series is: " + list);
+                  setArtList(list);
+                }}
               >
                 {list}
               </button>
@@ -55,57 +50,80 @@ const ArtGallery = () => {
     );
   };
 
-  
-
   // creates list of Art Objects
   const CreateGallery = () => {
-    let list = []
+    let list = [];
 
-    
     // STEPS NEEDED
     // check seriesFocus, load images with same series tag
-    // if no seriesFocus, load all images 
+    // if no seriesFocus, load all images
     // map artList and create Art objects for each
 
-    seriesFocus == "" ? (data.map((art) => { list.push(art) })) 
-    : createGallery()
-        
-    function createGallery(){
-      data.map( (art) => { 
-        if(!list.includes(art)){
-          if(art.series == seriesFocus){
-            list.push(art)
+    seriesFocus == ""
+      ? data.map((art) => {
+          list.push(art);
+        })
+      : createGallery();
+
+    // this will require pulling artList and then adding new piece. like: {setArtList( [...artList, art] )}
+    function createGallery() {
+      data.map((art) => {
+        if (!list.includes(art)) {
+          if (art.series == seriesFocus) {
+            list.push(art);
           }
         }
-      }) 
+      });
     }
-    
-    const ArtCard = ({art}) => {
-        return(
-          <div className="rounded-xl bg-teal-400 w-fit">
-            <p>{art.title}</p>
-            <img src={art.imgPath} className="h-40"/>
-          </div>
-        )
-    }
-    
 
-    
+    const ArtCard = ({ art }) => {
+      return (
+        <div className="rounded-xl w-fit p-3">
+          <img
+            src={art.imgPath}
+            onClick={() => {
+              setModalOpen(true);
+              setArtFocus(art);
+              console.log(artFocus);
+            }}
+            className="h-40"
+          />
+        </div>
+      );
+    };
 
     return (
-      <div>
-        <ul className="flex flex ">
+      <div className="p-5">
+        <ul className="flex">
           {list.map((art) => (
             <ArtCard id={art.title} art={art} />
           ))}
         </ul>
       </div>
-    )}
-  
+    );
+  };
 
   return (
     <div>
-      <Modal open={modalOpen} onClose={() => setModalOpen(false)}></Modal>
+      {artFocus ? (
+        <Modal
+          open={modalOpen}
+          onClose={() => setModalOpen(false)}
+          className="w-2/3 mx-auto"
+        >
+          <div className="items-center">
+            <img src={artFocus.imgPath} className="w-1/2 mx-auto" />
+            <div className="text-3xl text-white bg-teal-400 text-right m-5">
+              <p>{artFocus.title}</p>
+              <p>{artFocus.year}</p>
+              <p>{artFocus.medium}</p>
+              <p>{artFocus.size}</p>
+            </div>
+          </div>
+        </Modal>
+      ) : (
+        ""
+      )}
       <CreateSidebar />
       <CreateGallery />
     </div>
@@ -123,20 +141,20 @@ export default ArtGallery;
 //     "medium": "",
 //     "size": "",
 //     "imgPath": "",
-//     "section": ""
+//     "series": ""
 // }
 
 // const Art = (title, year, medium, size, url, series) => {
 
 //   console.log(title)
-  
+
 //   let artTitle = title
 //   // let year =    artObj.year
 //   // let medium =  artObj.medium
 //   // let size =    artObj.size
 //   // let url =     artObj.url
 //   // let series =  artObj.series
-//   const card = 
+//   const card =
 //   (<div>
 //     {artTitle}
 //   </div>)
