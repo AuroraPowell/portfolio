@@ -149,7 +149,14 @@ function EventList() {
 
         {/* RSVP List Modal */}
         {eventFocus ? (
-          <Modal open={open} onClose={() => setOpen(false)}>
+          <Modal
+            open={open}
+            onClose={() => setOpen(false)}
+            className={`
+            bg-pink-300 text-black rounded-3xl shadow p-6 transition-all bg-cover
+            ${open ? "scale-100 opacity-100" : "scale 125 opacity-0"}
+        `}
+          >
             <div className="border-2 flex flex-col p-3 min-w-full min-h-full font-bold text-2xl text-lime-500 bg-white rounded-2xl">
               {/* Event Name */}
               <div className="px-3 rounded-tl-3xl rounded-tr-3xl flex flex-inline justify-around items-center text-white bg-gray-400 min-h-12">
@@ -198,7 +205,14 @@ function EventList() {
 
         {/* Create Event Modal */}
         {openCreate ? (
-          <Modal open={openCreate} onClose={() => setOpenCreate(false)}>
+          <Modal
+            open={openCreate}
+            onClose={() => setOpenCreate(false)}
+            className={`
+            bg-pink-300 text-black rounded-3xl shadow p-6 transition-all bg-cover
+            ${open ? "scale-100 opacity-100" : "scale 125 opacity-0"}
+        `}
+          >
             {/* Includes Forms to create event and button to send it to JSON file */}
             <div className="bg-fuchsia-400 rounded-xl border-2 p-3 w-[500px]">
               <div className="flex flex-col items-center justify-center p-9 rounded-xl border-2 bg-white w-5xl w-full">
