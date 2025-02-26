@@ -17,10 +17,13 @@ const ArtGallery = () => {
   const [seriesFocus, setSeriesFocus] = useState("");
 
   //=======================================//
-  //        FEB 11 To-Do UPDATES
+  //        FEB 26 To-Do UPDATES
   //   - Fix aspect ratio scaling
   //   - Grid display
-  //   - Code to close modal on clicking of background (e.target)
+  //        /> come up with code to detect size to adjust grid setting (Tailwind feature)
+  //   - Create button to "view more"
+  //   - Make it so images disappear before hitting menu.
+  //        /> will require referencing menu component
   //=======================================//
 
   // creates responsively created list from mapping JSON file
@@ -48,22 +51,23 @@ const ArtGallery = () => {
     });
 
     function handleClick(selection) {
+      console.log("You've selected: " + selection);
       let value = selection;
       setSeriesFocus(value);
     }
     return (
       <div
-        className="text-slate-100 text-xl italic font-bold  
+        className=" text-xl italic font-bold  
       p-3
-      flex flex-col text-start"
+      flex flex-col"
       >
         {seriesList.map((series) => (
-          <p
-            className="hover:text-slate-900"
+          <button
+            className="hover:text-fuchsia-500 left-0"
             onClick={() => handleClick(series)}
           >
             {series}
-          </p>
+          </button>
         ))}
       </div>
     );
@@ -76,7 +80,9 @@ const ArtGallery = () => {
 
     let filteredGallery = [];
 
-    seriesFocus ? artList.filter((art) => art.series == seriesFocus) : "";
+    seriesFocus
+      ? (filteredGallery = artList.filter((art) => art.series == seriesFocus))
+      : "";
 
     // console.log(artList.filter((art) => art.series == "wet"));
 
@@ -95,37 +101,30 @@ const ArtGallery = () => {
 
     const ArtCard = ({ art }) => {
       return (
-        <div className="rounded-xl items-center">
+        <div id="art_card" className="rounded-xl items-center">
           <img
             src={art.imgPath}
             onClick={() => {
               setModalOpen(true);
               setArtFocus(art);
             }}
-            className="w-dvw mx-auto hover:opacity-70"
+            className="w-lvw mx-auto hover:opacity-70"
           />
         </div>
       );
     };
 
     return (
-      <div className="">
-        <ul
-          className="grid grid-cols-3 items-center  
-        h-96 overflow-auto"
-        >
-          {seriesFocus == ""
-            ? artList.map((art) => <ArtCard id={art.title} art={art} />)
-            : filteredGallery.map((art) => (
-                <ArtCard id={art.title} art={art} />
-              ))}
-        </ul>
-      </div>
+      <ul id="art_list" className="grid grid-cols-3 items-center">
+        {seriesFocus == ""
+          ? artList.map((art) => <ArtCard id={art.title} art={art} />)
+          : filteredGallery.map((art) => <ArtCard id={art.title} art={art} />)}
+      </ul>
     );
   };
 
   return (
-    <div className="flex justify-evenly">
+    <div id="sidebar_and_gallery" className="flex justify-evenly min-h-screen">
       {artFocus ? (
         <Modal
           open={modalOpen}
@@ -133,11 +132,14 @@ const ArtGallery = () => {
             setModalOpen(false);
             setArtFocus();
           }}
-          className="bg-slate-50 z-10"
+          className="bg-slate-50"
         >
-          <div className="flex flex-col items-center mx-auto w-fit bg-slate-50 bg-opacity-30">
-            <img src={artFocus.imgPath} className="w-32 mx-auto" />
-            <div className="text-3xl text-white bg-teal-400 m-5">
+          <div className="flex flex-col items-center mx-auto bg-slate-50 bg-opacity-30">
+            <img
+              src={artFocus.imgPath}
+              className="flex-grow max-w-4xl mx-auto"
+            />
+            <div className="text-3xl  bg-teal-400 m-5">
               <p>{artFocus.title}</p>
               <p>{artFocus.year}</p>
               <p>{artFocus.medium}</p>
@@ -147,9 +149,14 @@ const ArtGallery = () => {
         </Modal>
       ) : (
         ""
-      )}{" "}
+      )}
+
       <CreateSidebar />
-      {loading ? "loading" : <CreateGallery />}
+      {loading ? (
+        <p className="font-bold text-7xl">Loading</p>
+      ) : (
+        <CreateGallery />
+      )}
     </div>
   );
 };

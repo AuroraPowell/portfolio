@@ -15,26 +15,15 @@ const Landing = () => {
 
   const Content = () => {
     return (
-      <div id="container" className="block flex-1 w-full px-10 h-fit mx-auto">
-        <div
-          id="shape"
-          className="border-4 border-opacity-50 rounded-2xl h-fit m-3 items-center p-9 bg-opacity-20 bg-slate-50"
-        >
-          <ArtGallery />
-        </div>
+      <div id="container" className="  mx-auto">
+        <ArtGallery />
       </div>
     );
   };
 
   return (
     <AnimatedPage>
-      <div
-        id="landing"
-        className="flex flex-col min-h-screen overflow-hidden
-      
-        from-[#9ecdee] bg-gradient-to-b to-[#B8336A] via-[#C490D1]"
-      >
-        /* Put in viewpoint breaks for mobile menu. */
+      <div id="landing" className="flex flex-col">
         <Menu />
         <Content />
         <Footer />
@@ -44,3 +33,13 @@ const Landing = () => {
 };
 
 export default Landing;
+
+// PREVIOUS COLOR PALETTE
+// from-[#9ecdee] bg-gradient-to-b to-[#B8336A] via-[#C490D1]
+
+{
+  /* <div
+          id="shape"
+          className="border-4 border-opacity-50 rounded-2xl h-fit m-3 items-center p-9 bg-opacity-20 bg-slate-50"
+        >  </div> */
+}

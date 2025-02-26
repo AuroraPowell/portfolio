@@ -3,11 +3,13 @@ import { useLocation, useNavigate } from "react-router-dom";
 const Footer = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const {host, pathname, key} = location
+  const { host, pathname, key } = location;
   return (
     <div
-      className={`flex flex-row h-28 mt-9 space-x-32 w-svw justify-center items-stretch text-right 
-    font-thin font-mono ${pathname === "/about" ? `text-fuchsia-950` : `text-white`}`}
+      className={`flex flex-row h-20 mt-9 space-x-32 w-svw justify-center items-stretch text-right 
+    font-thin font-mono ${
+      pathname === "/about" ? `text-fuchsia-950` : `text-white`
+    }`}
     >
       {/* <div id="phrase">Discerning would ruin it.</div> */}
       <p className="text-left">

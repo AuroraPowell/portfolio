@@ -10,14 +10,14 @@ const Menu = () => {
   const navigate = useNavigate();
 
   const handleNav = () => {
-    setNav(!nav)
-  }
+    setNav(!nav);
+  };
 
   const framework = (
     <div
       id="menu"
       className="flex h-36 w-svw  sticky top-0 md:m-3 sm:m-3 md:z-30 sm:z-30
-      items-center  text-center text-[rgb(229,252,255)] font-bold
+      items-center  text-center  font-bold
        md:h-24 md:mt-0 sm:h-14 sm:mt-0 justify-around"
     >
       <div
@@ -30,26 +30,45 @@ const Menu = () => {
         </div>
       </div>
       <div className="flex relative flex-grow items-center ">
-
-
-          {/* ----------------
+        {/* ----------------
           
           v FIX THIS, STYLISTICALLY v
           
           --------------------- */}
-
-        <div className={nav ? "bg-purple-700 bg-opacity-30 w-full min-h-screen absolute m-10" : "flex-grow invisible lg:visible gap-10"}>
-          <button onClick={() => navigate("/")} className="px-3">
-            home
-          </button>
-          <button onClick={() => navigate("/projects")}>projects</button>
-          <button onClick={() => navigate("/about")} className="px-3">
-            about
-          </button>
-        </div>
+        {nav ? (
+          <div className="bg-purple-700 bg-opacity-30 w-full min-h-screen  z-20 m-10 flex-col">
+            <p>home</p>
+            <p>projects</p>
+            <p>about</p>
+          </div>
+        ) : (
+          <div className="flex-grow invisible lg:visible gap-10">
+            <button
+              onClick={() => navigate("/")}
+              className="px-3 hover:text-fuchsia-500"
+            >
+              home
+            </button>
+            <button
+              onClick={() => navigate("/projects")}
+              className="hover:text-fuchsia-500"
+            >
+              projects
+            </button>
+            <button
+              onClick={() => navigate("/about")}
+              className="px-3 hover:text-fuchsia-500"
+            >
+              about
+            </button>
+          </div>
+        )}
       </div>
 
-      <button onClick={handleNav} className="absolute right-0 text-3xl mx-9 font-bold lg:invisible visible">
+      <button
+        onClick={handleNav}
+        className="absolute right-0 text-3xl mx-9 font-bold lg:invisible visible"
+      >
         <GiHamburgerMenu />
       </button>
       {/* <WiMoonAltWaxingCrescent3
