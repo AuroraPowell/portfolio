@@ -56,20 +56,18 @@ const ArtGallery = () => {
       setSeriesFocus(value);
     }
     return (
-      <div
-        className=" text-xl italic font-bold  
-      p-3
-      flex flex-col"
+      <ul
+        className="h-screen text-xl italic font-bold w-1/12 pl-3 flex flex-col bg-red-500"
       >
         {seriesList.map((series) => (
           <button
-            className="hover:text-fuchsia-500 left-0"
+            className="hover:text-fuchsia-500 text-left"
             onClick={() => handleClick(series)}
           >
             {series}
           </button>
         ))}
-      </div>
+      </ul>
     );
   };
 
@@ -101,21 +99,23 @@ const ArtGallery = () => {
 
     const ArtCard = ({ art }) => {
       return (
-        <div id="art_card" className="rounded-xl items-center">
-          <img
+        <div id="art_card" className={art.horizontal == "y" ? "col-span-2 gap-9 gap-y-9 overflow-hidden content-center": "gap-9 gap-y-9 overflow-hidden content-center"}>
+          <img 
+          // width={art.horizontal == "y" ? "95%": "75%"}
             src={art.imgPath}
             onClick={() => {
               setModalOpen(true);
               setArtFocus(art);
             }}
-            className="w-lvw mx-auto hover:opacity-70"
+            
+            className="mx-auto hover:opacity-80 hover:scale-95 scale-90 "
           />
         </div>
       );
     };
 
     return (
-      <ul id="art_list" className="grid grid-cols-3 items-center">
+      <ul id="art_list" className="z-0 grid grid-cols-3 gap-y-3 content-center w-11/12">
         {seriesFocus == ""
           ? artList.map((art) => <ArtCard id={art.title} art={art} />)
           : filteredGallery.map((art) => <ArtCard id={art.title} art={art} />)}
@@ -124,7 +124,7 @@ const ArtGallery = () => {
   };
 
   return (
-    <div id="sidebar_and_gallery" className="flex justify-evenly min-h-screen">
+    <div id="sidebar_and_gallery" className="min-h-screen flex">
       {artFocus ? (
         <Modal
           open={modalOpen}
@@ -132,14 +132,14 @@ const ArtGallery = () => {
             setModalOpen(false);
             setArtFocus();
           }}
-          className="bg-slate-50"
+          className="bg-slate-50 z-30"
         >
           <div className="flex flex-col items-center mx-auto bg-slate-50 bg-opacity-30">
             <img
               src={artFocus.imgPath}
-              className="flex-grow max-w-4xl mx-auto"
+              className="flex-grow max-w-md mx-auto"
             />
-            <div className="text-3xl  bg-teal-400 m-5">
+            <div className="text-3xl bg-teal-400 m-5">
               <p>{artFocus.title}</p>
               <p>{artFocus.year}</p>
               <p>{artFocus.medium}</p>

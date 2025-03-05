@@ -23,10 +23,10 @@ const Landing = () => {
 
   return (
     <AnimatedPage>
-      <div id="landing" className="flex flex-col">
-        <Menu />
-        <Content />
-        <Footer />
+      <div id="landing" className="content-evenly flex-col">
+        <Menu className=""/>
+        <Content className=""/>
+        {/* FOOTER SIZING ISSUE <Footer />  */}
       </div>
     </AnimatedPage>
   );

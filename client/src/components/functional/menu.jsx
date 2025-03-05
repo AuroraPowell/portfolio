@@ -16,7 +16,7 @@ const Menu = () => {
   const framework = (
     <div
       id="menu"
-      className="flex h-36 w-svw  sticky top-0 md:m-3 sm:m-3 md:z-30 sm:z-30
+      className="flex h-36 sticky top-0 md:m-3 sm:m-3 md:z-30 sm:z-30
       items-center  text-center  font-bold
        md:h-24 md:mt-0 sm:h-14 sm:mt-0 justify-around"
     >
