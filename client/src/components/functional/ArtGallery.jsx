@@ -56,12 +56,10 @@ const ArtGallery = () => {
       setSeriesFocus(value);
     }
     return (
-      <ul
-        className="h-screen text-xl italic font-bold w-1/12 pl-3 flex flex-col bg-red-500"
-      >
+      <ul className="h-screen text-xl italic font-bold w-1/12 pl-3 flex flex-col">
         {seriesList.map((series) => (
           <button
-            className="hover:text-fuchsia-500 text-left"
+            className="hover:text-fuchsia-500 font-sans text-left"
             onClick={() => handleClick(series)}
           >
             {series}
@@ -99,15 +97,21 @@ const ArtGallery = () => {
 
     const ArtCard = ({ art }) => {
       return (
-        <div id="art_card" className={art.horizontal == "y" ? "col-span-2 gap-9 gap-y-9 overflow-hidden content-center": "gap-9 gap-y-9 overflow-hidden content-center"}>
-          <img 
-          // width={art.horizontal == "y" ? "95%": "75%"}
+        <div
+          id="art_card"
+          className={
+            art.horizontal == "y"
+              ? "col-span-2 gap-9 gap-y-9 overflow-hidden content-center"
+              : "gap-9 gap-y-9 overflow-hidden content-center"
+          }
+        >
+          <img
+            // width={art.horizontal == "y" ? "95%": "75%"}
             src={art.imgPath}
             onClick={() => {
               setModalOpen(true);
               setArtFocus(art);
             }}
-            
             className="mx-auto hover:opacity-80 hover:scale-95 scale-90 "
           />
         </div>
@@ -115,7 +119,10 @@ const ArtGallery = () => {
     };
 
     return (
-      <ul id="art_list" className="z-0 grid grid-cols-3 gap-y-3 content-center w-11/12">
+      <ul
+        id="art_list"
+        className="z-0 grid grid-cols-3 gap-y-3 content-center w-11/12"
+      >
         {seriesFocus == ""
           ? artList.map((art) => <ArtCard id={art.title} art={art} />)
           : filteredGallery.map((art) => <ArtCard id={art.title} art={art} />)}

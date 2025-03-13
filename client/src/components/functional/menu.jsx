@@ -16,17 +16,17 @@ const Menu = () => {
   const framework = (
     <div
       id="menu"
-      className="flex h-36 sticky top-0 md:m-3 sm:m-3 md:z-30 sm:z-30
-      items-center  text-center  font-bold
+      className="flex h-36 sticky start-0 md:m-3 sm:m-3 md:z-30 sm:z-30
+      items-center  text-center  font-bold font-serif
        md:h-24 md:mt-0 sm:h-14 sm:mt-0 justify-around"
     >
       <div
         id="icon"
         className="absolute font-light left-0 pl-9 text-3xl flex items-end"
       >
-        <div className="invisible lg:visible md:visible flex items-end">
+        <div className="invisible lg:visible md:visible flex flex-col items-end">
           <h1 className="font-bold ">Aurora Powell</h1>
-          <p className="text-2xl font-bold font-mono">.DEV</p>
+          <h3 className="text-sm">Artist</h3>
         </div>
       </div>
       <div className="flex relative flex-grow items-center ">

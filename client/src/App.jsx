@@ -6,6 +6,7 @@ import Projects from "./components/Projects";
 import Landing from "./components/Landing";
 import About from "./components/About";
 import Email from "./components/projects/Email.jsx";
+import Menu from "./components/functional/menu.jsx";
 
 import ScrollToTop from "./components/functional/ScrollToTop";
 
@@ -25,6 +26,7 @@ function App() {
   return (
     <BrowserRouter class="scroll-smooth">
       <ScrollToTop />
+      <Menu />
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/projects" element={<Projects />} />

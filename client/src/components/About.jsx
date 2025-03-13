@@ -8,13 +8,13 @@ import AnimatedPage from "./functional/AnimatedPage";
 import InRoll from "./functional/inRoll";
 
 const About = () => {
-
-  const info = (<p className="font-light p-2 ">
-    I am a full stack developer that has 6 years experience in
-    front-end web development. I graduated from Bridgewater College
-    with a Bachelor's Degree in Computer Science with a minor in
-    Art.{" "}
-  </p>)
+  const info = (
+    <p className="font-light p-2 ">
+      I am a full stack developer that has 6 years experience in front-end web
+      development. I graduated from Bridgewater College with a Bachelor's Degree
+      in Computer Science with a minor in Art.{" "}
+    </p>
+  );
   const Card = () => {
     return (
       <div
@@ -22,9 +22,9 @@ const About = () => {
       font-bold font-mono text-[#E5FCFF] mx-auto relative"
       >
         {/* <InRoll> */}
-          <div className="relative z-30 rounded-full lg:size-64 md:size-52 -mb-24">
-            <img src={selfie} className="absolute rounded-full" />
-          </div>
+        <div className="relative z-30 rounded-full lg:size-64 md:size-52 -mb-24">
+          <img src={selfie} className="absolute rounded-full" />
+        </div>
         {/* </InRoll> */}
 
         <div
@@ -42,7 +42,7 @@ const About = () => {
             <p className="py-3 text-xl lowercase">Aurora Powell</p>
             <div className="gap-9 pt-3">
               {info}
-              
+
               <button
                 className="tracking-widest lowercase rounded-xl
                m-3 p-3 px-9 bg-transparent border-2 border-[#E5FCFF]
@@ -60,8 +60,7 @@ const About = () => {
     <AnimatedPage>
       <div className="min-h-screen to-[#ABDAFC] to-65% from-[#B8336A] bg-gradient-to-b flex flex-col mx-auto  overflow-hidden">
         /* Put in viewpoint breaks for mobile menu. */
-        <Menu />
-
+        {/* <Menu /> */}
         <div id="card-loader" className="flex-grow mx-auto p-9">
           <Card />
         </div>
