@@ -135,12 +135,12 @@ const Projects = () => {
     // <AnimatedPage>
     <div
       className="min-h-screen overflow-hidden flex flex-col  
-      to-[#B8336A] from-[#C490D1] bg-gradient-to-b content-between"
+      to-[#B8336A] from-[#C490D1] p-9 bg-gradient-to-b content-between"
     >
-      /* Put in viewpoint breaks for mobile menu. */
+    
       {/* <Menu /> */}
-      <div className="grid grid-cols-2">
-        <Card project={emailProj} className="flex-1" />
+      <div className="grid">
+        {/* <Card project={emailProj} className="flex-1" /> */}
         <Card project={eventProj} className="flex-1" />
       </div>
       <Footer />

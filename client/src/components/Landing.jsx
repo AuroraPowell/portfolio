@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import Footer from "./Footer";
 
 import Menu from "./functional/menu";
-import AnimatedPage from "./functional/AnimatedPage";
+// import AnimatedPage from "./functional/AnimatedPage";
 import ArtGallery from "./functional/ArtGallery";
 
 const Landing = () => {
@@ -22,13 +22,14 @@ const Landing = () => {
   };
 
   return (
-    <AnimatedPage>
-      <div id="landing" className="content-evenly flex-col">
+    // formerly had it fade between gradient screens - too difficult to keep up style
+    // <AnimatedPage>
+      <div id="landing" className="content-evenly flex-col bg-black m-3">
         {/* <Menu className=""/> */}
         <Content className="" />
         {/* FOOTER SIZING ISSUE <Footer />  */}
       </div>
-    </AnimatedPage>
+    // </AnimatedPage>
   );
 };
 

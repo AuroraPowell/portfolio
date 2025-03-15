@@ -16,45 +16,47 @@ const Menu = () => {
   const framework = (
     <div
       id="menu"
-      className="flex h-36 sticky start-0 md:m-3 sm:m-3 md:z-30 sm:z-30
+      className="flex flex-row justify-between h-36 sticky start-0 
       items-center  text-center  font-bold font-serif
-       md:h-24 md:mt-0 sm:h-14 sm:mt-0 justify-around"
+        bg-black text-slate-200"
     >
       <div
         id="icon"
-        className="absolute font-light left-0 pl-9 text-3xl flex items-end"
+        className="absolute font-light left-0 pl-9 text-3xl items-end"
       >
-        <div className="invisible lg:visible md:visible flex flex-col items-end">
+        <div className="flex invisible md:visible lg:visible flex-grow flex-col items-end w-fit">
           <h1 className="font-bold ">Aurora Powell</h1>
-          <h3 className="text-sm">Artist</h3>
+          <h3 className="text-sm">Artist // Coder</h3>
         </div>
+        
       </div>
-      <div className="flex relative flex-grow items-center ">
+      <div className="flex flex-grow items-center w-fit">
+
         {/* ----------------
           
           v FIX THIS, STYLISTICALLY v
           
           --------------------- */}
-        {nav ? (
-          <div className="bg-purple-700 bg-opacity-30 w-full min-h-screen  z-20 m-10 flex-col">
+        {/* {nav ? (
+          <div className="w-full min-h-screen  z-20 m-10 flex-col">
             <p>home</p>
             <p>projects</p>
             <p>about</p>
           </div>
-        ) : (
-          <div className="flex-grow invisible lg:visible gap-10">
+        ) : ( */}
+          <div className="flex-grow lg:visible gap-10">
             <button
               onClick={() => navigate("/")}
               className="px-3 hover:text-fuchsia-500"
             >
               home
             </button>
-            <button
+            {/* <button
               onClick={() => navigate("/projects")}
               className="hover:text-fuchsia-500"
             >
               projects
-            </button>
+            </button> */}
             <button
               onClick={() => navigate("/about")}
               className="px-3 hover:text-fuchsia-500"
@@ -62,15 +64,15 @@ const Menu = () => {
               about
             </button>
           </div>
-        )}
+        {/* )} */}
       </div>
 
-      <button
+      {/* <button
         onClick={handleNav}
         className="absolute right-0 text-3xl mx-9 font-bold lg:invisible visible"
       >
         <GiHamburgerMenu />
-      </button>
+      </button> */}
       {/* <WiMoonAltWaxingCrescent3
         className="size-24 items-center "
         onClick={() => navigate("/")}

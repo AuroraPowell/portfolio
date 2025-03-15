@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 
 import data from "./art.json";
-import Modal from "../projects/countme.in/functions/Modal";
+import Modal from "../functional/Modal";
 
 import { IoIosCloseCircle } from "react-icons/io";
 
@@ -56,10 +56,11 @@ const ArtGallery = () => {
       setSeriesFocus(value);
     }
     return (
-      <ul className="h-screen text-xl italic font-bold w-1/12 pl-3 flex flex-col">
+      <ul className="h-screen text-xl italic font-bold  pl-3 
+      flex flex-col border-r-4 border-slate-200 w-fit">
         {seriesList.map((series) => (
           <button
-            className="hover:text-fuchsia-500 font-sans text-left"
+            className="hover:text-fuchsia-500 py-5 font-sans text-left text-slate-200"
             onClick={() => handleClick(series)}
           >
             {series}
@@ -121,7 +122,7 @@ const ArtGallery = () => {
     return (
       <ul
         id="art_list"
-        className="z-0 grid grid-cols-3 gap-y-3 content-center w-11/12"
+        className=" grid grid-cols-3 gap-y-3 content-center w-11/12"
       >
         {seriesFocus == ""
           ? artList.map((art) => <ArtCard id={art.title} art={art} />)
@@ -139,14 +140,14 @@ const ArtGallery = () => {
             setModalOpen(false);
             setArtFocus();
           }}
-          className="bg-slate-50 z-30"
+          className=""
         >
-          <div className="flex flex-col items-center mx-auto bg-slate-50 bg-opacity-30">
+          <div className="flex flex-col items-center mx-auto">
             <img
               src={artFocus.imgPath}
               className="flex-grow max-w-md mx-auto"
             />
-            <div className="text-3xl bg-teal-400 m-5">
+            <div className="text-3xl m-5">
               <p>{artFocus.title}</p>
               <p>{artFocus.year}</p>
               <p>{artFocus.medium}</p>

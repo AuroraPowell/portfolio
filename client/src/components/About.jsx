@@ -15,6 +15,10 @@ const About = () => {
       in Computer Science with a minor in Art.{" "}
     </p>
   );
+
+  function onClick(){
+
+  }
   const Card = () => {
     return (
       <div
@@ -43,13 +47,15 @@ const About = () => {
             <div className="gap-9 pt-3">
               {info}
 
-              <button
+              {/* <button
                 className="tracking-widest lowercase rounded-xl
                m-3 p-3 px-9 bg-transparent border-2 border-[#E5FCFF]
               text-black hover:text-[#E5FCFF]"
+
+              onClick={() => onClick}
               >
                 Contact Me
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
@@ -57,17 +63,21 @@ const About = () => {
     );
   };
   return (
-    <AnimatedPage>
-      <div className="min-h-screen to-[#ABDAFC] to-65% from-[#B8336A] bg-gradient-to-b flex flex-col mx-auto  overflow-hidden">
-        /* Put in viewpoint breaks for mobile menu. */
+    // formerly had it fade between gradient screens - too difficult to keep up style
+    // <AnimatedPage>
+      <div className="min-h-screen  flex flex-col mx-auto  overflow-hidden bg-black z-30 border-white border-8">
+     
         {/* <Menu /> */}
         <div id="card-loader" className="flex-grow mx-auto p-9">
           <Card />
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </div>
-    </AnimatedPage>
+    // </AnimatedPage>
   );
 };
 
 export default About;
+
+// OLD COLOR WAY
+// to-[#ABDAFC] to-65% from-[#B8336A] bg-gradient-to-b
