@@ -5,7 +5,6 @@ import Footer from "./Footer";
 import selfie from "../assets/selfie.jpg";
 
 import AnimatedPage from "./functional/AnimatedPage";
-import InRoll from "./functional/inRoll";
 
 const About = () => {
   const info = (
@@ -16,9 +15,7 @@ const About = () => {
     </p>
   );
 
-  function onClick(){
-
-  }
+  function onClick() {}
   const Card = () => {
     return (
       <div
@@ -65,14 +62,13 @@ const About = () => {
   return (
     // formerly had it fade between gradient screens - too difficult to keep up style
     // <AnimatedPage>
-      <div className="min-h-screen  flex flex-col mx-auto  overflow-hidden bg-black z-30 border-white border-8">
-     
-        {/* <Menu /> */}
-        <div id="card-loader" className="flex-grow mx-auto p-9">
-          <Card />
-        </div>
-        {/* <Footer /> */}
+    <div className="min-h-screen  flex flex-col mx-auto  overflow-hidden bg-black z-30 border-white border-8">
+      {/* <Menu /> */}
+      <div id="card-loader" className="flex-grow mx-auto p-9">
+        <Card />
       </div>
+      {/* <Footer /> */}
+    </div>
     // </AnimatedPage>
   );
 };

@@ -18,17 +18,12 @@ const ArtGallery = () => {
 
   //=======================================//
   //        FEB 26 To-Do UPDATES
-  //   - Fix aspect ratio scaling
-  //   - Grid display
-  //        /> come up with code to detect size to adjust grid setting (Tailwind feature)
   //   - Create button to "view more"
   //   - Make it so images disappear before hitting menu.
-  //        /> will require referencing menu component
+  //        /> will require referencing menu component & using IntersectionObserver
   //=======================================//
 
   // creates responsively created list from mapping JSON file
-
-  // load page - load list once and take series titles along with creating art card.
 
   useEffect(() => {
     setLoading(true);
@@ -37,13 +32,6 @@ const ArtGallery = () => {
   }, []);
 
   const CreateSidebar = () => {
-    // let seriesTitles = [];
-    // data.map((art) => {
-    //   if (!seriesTitles.includes(art.series)) {
-    //     seriesTitles.push(art.series);
-    //   }
-    // });
-
     artList.map((art) => {
       if (!seriesList.includes(art.series)) {
         seriesList.push(art.series);
@@ -56,8 +44,10 @@ const ArtGallery = () => {
       setSeriesFocus(value);
     }
     return (
-      <ul className="h-screen text-xl italic font-bold  pl-3 
-      flex flex-col border-r-4 border-slate-200 w-fit">
+      <ul
+        className="h-screen text-xl italic font-bold  pl-3 
+      flex flex-col border-r-4 border-slate-200 w-fit"
+      >
         {seriesList.map((series) => (
           <button
             className="hover:text-fuchsia-500 py-5 font-sans text-left text-slate-200"
@@ -72,29 +62,11 @@ const ArtGallery = () => {
 
   // creates list of Art Objects
   const CreateGallery = () => {
-    // rework the following
-    // this will require pulling artList and then adding new piece. like: {setArtList( [...artList, art] )}
-
     let filteredGallery = [];
 
     seriesFocus
       ? (filteredGallery = artList.filter((art) => art.series == seriesFocus))
       : "";
-
-    // console.log(artList.filter((art) => art.series == "wet"));
-
-    // console.log("Filtered gallery: " + filteredGallery);
-    // seriesFocus == ""
-    //   ? data.map((art) => list.push(art))
-    //   : data.map((art) => {
-    //       setLoading(true);
-    //       if (!artList.includes(art)) {
-    //         if (art.series == seriesFocus) {
-    //           list.push(art);
-    //         }
-    //       }
-    //       setLoading(false);
-    //     });
 
     const ArtCard = ({ art }) => {
       return (
@@ -122,7 +94,7 @@ const ArtGallery = () => {
     return (
       <ul
         id="art_list"
-        className=" grid grid-cols-3 gap-y-3 content-center w-11/12"
+        className=" grid lg:grid-cols-3 sm:grid-cols-2 gap-y-3 content-center w-11/12"
       >
         {seriesFocus == ""
           ? artList.map((art) => <ArtCard id={art.title} art={art} />)
