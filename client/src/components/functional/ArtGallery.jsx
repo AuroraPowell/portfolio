@@ -2,26 +2,20 @@ import React from "react";
 import { useState, useEffect } from "react";
 
 import data from "./art.json";
-import Modal from "../functional/Modal";
+import ArtModal from "./ArtModal";
 
 import { IoIosCloseCircle } from "react-icons/io";
 
 const ArtGallery = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [screen, setScreen] = useState();
 
   const [artList, setArtList] = useState([]);
   let seriesList = [];
 
   const [artFocus, setArtFocus] = useState();
   const [seriesFocus, setSeriesFocus] = useState("");
-
-  //=======================================//
-  //        FEB 26 To-Do UPDATES
-  //   - Create button to "view more"
-  //   - Make it so images disappear before hitting menu.
-  //        /> will require referencing menu component & using IntersectionObserver
-  //=======================================//
 
   // creates responsively created list from mapping JSON file
 
@@ -32,21 +26,27 @@ const ArtGallery = () => {
   }, []);
 
   const CreateSidebar = () => {
+    // function to create list of series titles
     artList.map((art) => {
       if (!seriesList.includes(art.series)) {
         seriesList.push(art.series);
       }
     });
 
+    // function activated on selecting series
     function handleClick(selection) {
       console.log("You've selected: " + selection);
       let value = selection;
       setSeriesFocus(value);
     }
     return (
+      // renders series titles as menu buttons
+
+      // >> // >> [[ FIX THE FOLLOWING FOR MOBILE DEVICES: DON'T USE SIDEBAR ]]
       <ul
-        className="h-screen text-xl italic font-bold  pl-3 
-      flex flex-col border-r-4 border-slate-200 w-fit"
+        id="sidebar"
+        className="fixed text-sm sm:text-xl italic font-bold  p-3 
+      flex flex-col w-fit sm:w-1/6 h-full"
       >
         {seriesList.map((series) => (
           <button
@@ -62,6 +62,7 @@ const ArtGallery = () => {
 
   // creates list of Art Objects
   const CreateGallery = () => {
+    // Component that renders previously created list of artwork
     let filteredGallery = [];
 
     seriesFocus
@@ -69,12 +70,13 @@ const ArtGallery = () => {
       : "";
 
     const ArtCard = ({ art }) => {
+      // Artwork component
       return (
         <div
           id="art_card"
           className={
             art.horizontal == "y"
-              ? "col-span-2 gap-9 gap-y-9 overflow-hidden content-center"
+              ? "md:col-span-3 gap-9 gap-y-9 overflow-hidden content-center"
               : "gap-9 gap-y-9 overflow-hidden content-center"
           }
         >
@@ -85,16 +87,18 @@ const ArtGallery = () => {
               setModalOpen(true);
               setArtFocus(art);
             }}
-            className="mx-auto hover:opacity-80 hover:scale-95 scale-90 "
+            className="border-2 border-red-400
+             mx-auto hover:opacity-80 hover:scale-95 scale-90 "
           />
         </div>
       );
     };
 
     return (
+      // rendering all art or only from specific series
       <ul
-        id="art_list"
-        className=" grid lg:grid-cols-3 sm:grid-cols-2 gap-y-3 content-center w-11/12"
+        id="gallery"
+        className="ml-auto grid grid-cols-1 md:grid-cols-3 gap-y-3 w-5/6 right-0 bg-black"
       >
         {seriesFocus == ""
           ? artList.map((art) => <ArtCard id={art.title} art={art} />)
@@ -104,15 +108,18 @@ const ArtGallery = () => {
   };
 
   return (
-    <div id="sidebar_and_gallery" className="min-h-screen flex">
+    <div
+      id="sidebar_and_gallery"
+      className="min-h-screen flex w-full border-4 border-white"
+    >
+      <CreateSidebar />
       {artFocus ? (
-        <Modal
+        <ArtModal
           open={modalOpen}
           onClose={() => {
             setModalOpen(false);
             setArtFocus();
           }}
-          className=""
         >
           <div className="flex flex-col items-center mx-auto">
             <img
@@ -126,14 +133,15 @@ const ArtGallery = () => {
               <p>{artFocus.size}</p>
             </div>
           </div>
-        </Modal>
+        </ArtModal>
       ) : (
         ""
       )}
 
-      <CreateSidebar />
       {loading ? (
-        <p className="font-bold text-7xl">Loading</p>
+        <p className="font-bold text-7xl text-slate-50 text-end w-full pr-10">
+          Loading
+        </p>
       ) : (
         <CreateGallery />
       )}

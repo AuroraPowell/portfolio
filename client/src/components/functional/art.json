@@ -1,129 +1,131 @@
 [
-    {
-        "title": "No Release",
-        "year": "2020",
-        "medium": "acrylic on canvas", 
-        "size": "19x19",
-        "imgPath": "/art/triptych/no-release.JPG",
-        "series": "flesh",
-        "horizontal": "n"
-    },
-    {
-        "title": "Tethered",
-        "year": "2020",
-        "medium": "acrylic on canvas",
-        "size": "19x19",
-        "imgPath": "/art/triptych/tethered.JPG",
-        "series": "flesh",
-        "horizontal": "n"
-    },
-    {
-        "title": "In Bloom",
-        "year": "2020",
-        "medium": "acrylic on canvas", 
-        "size": "19x19",
-        "imgPath": "/art/triptych/in-bloom.JPG",
-        "series": "flesh",
-        "horizontal": "n"
-    },
-    {
-        "title": "Serpentine Self and the Ensnared Ego",
-        "year": "2022",
-        "medium": "acrylic on canvas", 
-        "size": "36x20",
-        "imgPath": "/art/serpentine.JPG",
-        "series": "wet",
-        "horizontal": "y"
-    },
-    {
-        "title": "Beacon Beckoned",
-        "year": "2022",
-        "medium": "acrylic on canvas", 
-        "size": "19x22",
-        "imgPath": "/art/beacon-beckoned.JPG",
-        "series": "wet",
-        "horizontal": "n"
-    },
-    {
-        "title": "Vessels",
-        "year": "2022",
-        "medium": "acrylic on canvas",
-        "size": "28x28",
-        "imgPath": "/art/vessels.jpg",
-        "series": "wet",
-        "horizontal": "n"
-    },
-    {
-        "title": "The World Witnesses the Great Dewinging While Others Hide From the Maw",
-        "year": "2023",
-        "medium": "acrylic on canvas",
-        "size": "55x65",
-        "imgPath": "/art/world witnesses.png",
-        "series": "wet",
-        "horizontal": "n"
-    },
-    {
-        "title": "Flower & Thorn",
-        "year": "2025",
-        "medium": "acrylic on canvas",
-        "size": "19x19",
-        "imgPath": "/art/flower and thorn.JPG",
-        "series": "flesh",
-        "horizontal": "n"
-    },
-    {
-        "title": "Figure Seen",
-        "year": "2022",
-        "medium": "acrylic on canvas paper",
-        "size": "9x12",
-        "imgPath": "/art/smaller works/FigureSeen.jpg",
-        "series": "smaller work",
-        "horizontal": "n"
-    },
-    {
-        "title": "Stimulation",
-        "year": "2022",
-        "medium": "acrylic on canvas paper",
-        "size": "9x12",
-        "imgPath": "/art/smaller works/Stimulation.jpg",
-        "series": "smaller work",
-        "horizontal": "n"
-    },
-    {
-        "title": "Figure Seer",
-        "year": "2022",
-        "medium": "acrylic on canvas paper",
-        "size": "9x12",
-        "imgPath": "/art/smaller works/FigureSeer.jpg",
-        "series": "smaller work",
-        "horizontal": "n"
-    },
-    {
-        "title": "Reflection",
-        "year": "2021",
-        "medium": "acrylic on canvas",
-        "size": "30x48",
-        "imgPath": "/art/Reflection.JPG",
-        "series": "flesh",
-        "horizontal": "n"
-    },
-    {
-        "title": "Field of Faces",
-        "year": "2021",
-        "medium": "Watercolor on paper",
-        "size": "9x12",
-        "imgPath": "/art/smaller works/field of faces.jpg",
-        "series": "smaller work",
-        "horizontal": "n"
-    },
-    {
-        "title": "Josh",
-        "year": "2022",
-        "medium": "acrylic on canvas paper",
-        "size": "9x12",
-        "imgPath": "/art/smaller works/JOSH PAINTING.jpg",
-        "series": "portrait",
-        "horizontal": "n"
-    }
-    
+  {
+    "title": "Reflection",
+    "year": "2021",
+    "medium": "acrylic on canvas",
+    "size": "30x48",
+    "imgPath": "/art/Reflection.JPG",
+    "series": "flesh",
+    "horizontal": "n"
+  },
+
+  {
+    "title": "The World Witnesses the Great Dewinging While Others Hide From the Maw",
+    "year": "2023",
+    "medium": "acrylic on canvas",
+    "size": "55x65",
+    "imgPath": "/art/world witnesses.png",
+    "series": "wet",
+    "horizontal": "n"
+  },
+  {
+    "title": "Flower & Thorn",
+    "year": "2025",
+    "medium": "acrylic on canvas",
+    "size": "19x19",
+    "imgPath": "/art/flower and thorn.JPG",
+    "series": "flesh",
+    "horizontal": "n"
+  },
+  {
+    "title": "Serpentine Self and the Ensnared Ego",
+    "year": "2022",
+    "medium": "acrylic on canvas",
+    "size": "36x20",
+    "imgPath": "/art/serpentine.JPG",
+    "series": "wet",
+    "horizontal": "n"
+  },
+
+  {
+    "title": "No Release",
+    "year": "2020",
+    "medium": "acrylic on canvas",
+    "size": "19x19",
+    "imgPath": "/art/triptych/no-release.JPG",
+    "series": "flesh",
+    "horizontal": "n"
+  },
+  {
+    "title": "Tethered",
+    "year": "2020",
+    "medium": "acrylic on canvas",
+    "size": "19x19",
+    "imgPath": "/art/triptych/tethered.JPG",
+    "series": "flesh",
+    "horizontal": "n"
+  },
+  {
+    "title": "In Bloom",
+    "year": "2020",
+    "medium": "acrylic on canvas",
+    "size": "19x19",
+    "imgPath": "/art/triptych/in-bloom.JPG",
+    "series": "flesh",
+    "horizontal": "n"
+  },
+  {
+    "title": "Figure Seen",
+    "year": "2022",
+    "medium": "acrylic on canvas paper",
+    "size": "9x12",
+    "imgPath": "/art/smaller works/FigureSeen.jpg",
+    "series": "smaller work",
+    "horizontal": "n"
+  },
+  {
+    "title": "Stimulation",
+    "year": "2022",
+    "medium": "acrylic on canvas paper",
+    "size": "9x12",
+    "imgPath": "/art/smaller works/Stimulation.jpg",
+    "series": "smaller work",
+    "horizontal": "n"
+  },
+  {
+    "title": "Figure Seer",
+    "year": "2022",
+    "medium": "acrylic on canvas paper",
+    "size": "9x12",
+    "imgPath": "/art/smaller works/FigureSeer.jpg",
+    "series": "smaller work",
+    "horizontal": "n"
+  },
+
+  {
+    "title": "Beacon Beckoned",
+    "year": "2022",
+    "medium": "acrylic on canvas",
+    "size": "19x22",
+    "imgPath": "/art/beacon-beckoned.JPG",
+    "series": "wet",
+    "horizontal": "n"
+  },
+  {
+    "title": "Vessels",
+    "year": "2022",
+    "medium": "acrylic on canvas",
+    "size": "28x28",
+    "imgPath": "/art/vessels.jpg",
+    "series": "wet",
+    "horizontal": "n"
+  },
+  {
+    "title": "Field of Faces",
+    "year": "2021",
+    "medium": "Watercolor on paper",
+    "size": "9x12",
+    "imgPath": "/art/smaller works/field of faces.jpg",
+    "series": "smaller work",
+    "horizontal": "n"
+  },
+  {
+    "title": "Josh",
+    "year": "2022",
+    "medium": "acrylic on canvas paper",
+    "size": "9x12",
+    "imgPath": "/art/smaller works/JOSH PAINTING.jpg",
+    "series": "portrait",
+    "horizontal": "n"
+  }
 ]
