@@ -13,6 +13,7 @@ const Menu = () => {
     setNav(!nav);
   };
 
+
   const framework = (
     <div
       id="menu"
@@ -24,9 +25,10 @@ const Menu = () => {
         id="icon"
         className="absolute font-light left-0 pl-9 text-3xl items-end"
       >
-        <div className="flex invisible md:visible lg:visible flex-grow flex-col items-end w-fit">
+        <div className="flex invisible md:visible lg:visible flex-grow flex-col items-end w-fit
+        ">
           <h1 className="font-bold ">Aurora Powell</h1>
-          <h3 className="text-sm">Artist // Coder</h3>
+          <h3 className="text-sm">Artist // Full-Stack Developer</h3>
         </div>
         
       </div>
@@ -47,7 +49,7 @@ const Menu = () => {
           <div className="flex-grow lg:visible gap-10">
             <button
               onClick={() => navigate("/")}
-              className="px-3 hover:text-fuchsia-500"
+              className="px-3 hover:text-red-400"
             >
               home
             </button>
@@ -59,7 +61,7 @@ const Menu = () => {
             </button> */}
             <button
               onClick={() => navigate("/about")}
-              className="px-3 hover:text-fuchsia-500"
+              className="px-3 hover:text-red-400"
             >
               about
             </button>

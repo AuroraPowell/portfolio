@@ -10,8 +10,8 @@ const About = () => {
   const info = (
     <p className="font-light p-2 ">
       I am a full stack developer that has 6 years experience in front-end web
-      development. I graduated from Bridgewater College with a Bachelor's Degree
-      in Computer Science with a minor in Art.{" "}
+      development. <br></br><br></br> 
+      I primarily code in NodeJS and ReactJS, though I've used Java, HTML/CSS/SCSS, and C and learn quickly. {" "}
     </p>
   );
 
@@ -66,6 +66,9 @@ const About = () => {
       {/* <Menu /> */}
       <div id="card-loader" className="flex-grow mx-auto p-9">
         <Card />
+      </div>
+      <div className="pt-9 text-white w-full mx-auto h-fit">
+        
       </div>
       {/* <Footer /> */}
     </div>

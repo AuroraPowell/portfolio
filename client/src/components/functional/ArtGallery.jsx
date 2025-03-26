@@ -9,7 +9,6 @@ import { IoIosCloseCircle } from "react-icons/io";
 const ArtGallery = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [screen, setScreen] = useState();
 
   const [artList, setArtList] = useState([]);
   let seriesList = [];
@@ -26,13 +25,14 @@ const ArtGallery = () => {
   }, []);
 
   const CreateSidebar = () => {
-    // function to create list of series titles
+    // function to create list of years
     artList.map((art) => {
-      if (!seriesList.includes(art.series)) {
-        seriesList.push(art.series);
+      if (!seriesList.includes(art.year)) {
+        seriesList.push(art.year);
       }
     });
 
+    seriesList.sort()
     // function activated on selecting series
     function handleClick(selection) {
       console.log("You've selected: " + selection);
@@ -48,12 +48,12 @@ const ArtGallery = () => {
         className="fixed text-sm sm:text-xl italic font-bold  p-3 
       flex flex-col w-fit sm:w-1/6 h-full"
       >
-        {seriesList.map((series) => (
+        {seriesList.map((year) => (
           <button
-            className="hover:text-fuchsia-500 py-5 font-sans text-left text-slate-200"
-            onClick={() => handleClick(series)}
+            className="hover:text-red-400 py-5 font-sans text-left text-slate-200"
+            onClick={() => handleClick(year)}
           >
-            {series}
+            {year}
           </button>
         ))}
       </ul>
@@ -66,7 +66,7 @@ const ArtGallery = () => {
     let filteredGallery = [];
 
     seriesFocus
-      ? (filteredGallery = artList.filter((art) => art.series == seriesFocus))
+      ? (filteredGallery = artList.filter((art) => art.year == seriesFocus))
       : "";
 
     const ArtCard = ({ art }) => {
@@ -81,14 +81,13 @@ const ArtGallery = () => {
           }
         >
           <img
-            // width={art.horizontal == "y" ? "95%": "75%"}
             src={art.imgPath}
             onClick={() => {
               setModalOpen(true);
               setArtFocus(art);
             }}
             className="border-2 border-red-400
-             mx-auto hover:opacity-80 hover:scale-95 scale-90 "
+             mx-auto hover:opacity-80 sm:hover:scale-95 scale-90 "
           />
         </div>
       );
@@ -98,8 +97,8 @@ const ArtGallery = () => {
       // rendering all art or only from specific series
       <ul
         id="gallery"
-        className="ml-auto grid grid-cols-1 md:grid-cols-3 gap-y-3 w-5/6 right-0 bg-black"
-      >
+        className="ml-auto grid grid-cols-1 md:grid-cols-3 gap-y-3 w-5/6 right-0"
+        >
         {seriesFocus == ""
           ? artList.map((art) => <ArtCard id={art.title} art={art} />)
           : filteredGallery.map((art) => <ArtCard id={art.title} art={art} />)}
@@ -126,24 +125,25 @@ const ArtGallery = () => {
               src={artFocus.imgPath}
               className="flex-grow max-w-md mx-auto"
             />
-            <div className="text-3xl m-5">
+            {/* <div className="text-3xl m-5">
               <p>{artFocus.title}</p>
               <p>{artFocus.year}</p>
               <p>{artFocus.medium}</p>
               <p>{artFocus.size}</p>
-            </div>
+            </div> */}
           </div>
         </ArtModal>
       ) : (
         ""
       )}
 
-      {loading ? (
+      
+      {loading ? 
         <p className="font-bold text-7xl text-slate-50 text-end w-full pr-10">
           Loading
         </p>
-      ) : (
-        <CreateGallery />
+       : (
+        artFocus ? "" : <CreateGallery /> 
       )}
     </div>
   );
