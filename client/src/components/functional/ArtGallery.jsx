@@ -13,7 +13,7 @@ const ArtGallery = () => {
   const [artList, setArtList] = useState([]);
   let seriesList = [];
 
-  const [artFocus, setArtFocus] = useState();
+  const [artFocus, setArtFocus] = useState(null);
   const [seriesFocus, setSeriesFocus] = useState("");
 
   // creates responsively created list from mapping JSON file
@@ -97,7 +97,7 @@ const ArtGallery = () => {
       // rendering all art or only from specific series
       <ul
         id="gallery"
-        className="ml-auto grid grid-cols-1 md:grid-cols-3 gap-y-3 w-5/6 right-0"
+        className="ml-auto grid grid-cols-1 md:grid-cols-3 max-xl:grid-cols-3 2xl:grid-cols-6 gap-y-3 w-5/6 right-0"
         >
         {seriesFocus == ""
           ? artList.map((art) => <ArtCard id={art.title} art={art} />)
@@ -112,7 +112,7 @@ const ArtGallery = () => {
       className="min-h-screen flex w-full border-4 border-white"
     >
       <CreateSidebar />
-      {artFocus ? (
+      {artFocus && (
         <ArtModal
           open={modalOpen}
           onClose={() => {
@@ -120,10 +120,10 @@ const ArtGallery = () => {
             setArtFocus();
           }}
         >
-          <div className="flex flex-col items-center mx-auto">
+          <div className="flex flex-col md:max-w-md max-h-screen mx-auto">
             <img
               src={artFocus.imgPath}
-              className="flex-grow max-w-md mx-auto"
+              className="flex-grow mx-auto h-fit"
             />
             {/* <div className="text-3xl m-5">
               <p>{artFocus.title}</p>
@@ -133,8 +133,6 @@ const ArtGallery = () => {
             </div> */}
           </div>
         </ArtModal>
-      ) : (
-        ""
       )}
 
       
