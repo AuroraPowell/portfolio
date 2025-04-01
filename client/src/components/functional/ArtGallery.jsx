@@ -32,7 +32,7 @@ const ArtGallery = () => {
       }
     });
 
-    seriesList.sort()
+    seriesList.sort();
     // function activated on selecting series
     function handleClick(selection) {
       console.log("You've selected: " + selection);
@@ -40,7 +40,7 @@ const ArtGallery = () => {
       setSeriesFocus(value);
     }
     return (
-      // renders series titles as menu buttons
+      // menu buttons for showing groupings of art
 
       // >> // >> [[ FIX THE FOLLOWING FOR MOBILE DEVICES: DON'T USE SIDEBAR ]]
       <ul
@@ -98,7 +98,7 @@ const ArtGallery = () => {
       <ul
         id="gallery"
         className="ml-auto grid grid-cols-1 md:grid-cols-3 max-xl:grid-cols-3 2xl:grid-cols-6 gap-y-3 w-5/6 right-0"
-        >
+      >
         {seriesFocus == ""
           ? artList.map((art) => <ArtCard id={art.title} art={art} />)
           : filteredGallery.map((art) => <ArtCard id={art.title} art={art} />)}
@@ -121,10 +121,7 @@ const ArtGallery = () => {
           }}
         >
           <div className="flex flex-col md:max-w-md max-h-screen mx-auto">
-            <img
-              src={artFocus.imgPath}
-              className="flex-grow mx-auto h-fit"
-            />
+            <img src={artFocus.imgPath} className="flex-grow mx-auto h-fit" />
             {/* <div className="text-3xl m-5">
               <p>{artFocus.title}</p>
               <p>{artFocus.year}</p>
@@ -135,13 +132,14 @@ const ArtGallery = () => {
         </ArtModal>
       )}
 
-      
-      {loading ? 
+      {loading ? (
         <p className="font-bold text-7xl text-slate-50 text-end w-full pr-10">
           Loading
         </p>
-       : (
-        artFocus ? "" : <CreateGallery /> 
+      ) : artFocus ? (
+        ""
+      ) : (
+        <CreateGallery />
       )}
     </div>
   );

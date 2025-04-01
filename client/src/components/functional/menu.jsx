@@ -6,67 +6,75 @@ import { WiMoonAltWaxingCrescent3 } from "react-icons/wi";
 import { useState } from "react";
 
 const Menu = () => {
-  const [nav, setNav] = useState(false);
   const navigate = useNavigate();
+  const [nav, setNav] = useState(false);
+  const [isDropdownVisible, setDropdownVisible] = useState(false);
+
+  const handleMouseEnter = () => {
+    setDropdownVisible(true);
+  };
+
+  const handleMouseLeave = () => {
+    setDropdownVisible(false);
+  };
 
   const handleNav = () => {
     setNav(!nav);
   };
 
-
   const framework = (
     <div
       id="menu"
-      className="flex flex-row justify-between h-36 sticky start-0 
-      items-center  text-center  font-bold font-serif
-        bg-black text-slate-200"
+      className="flex flex-row flex-grow 
+      h-36 sticky 
+      items-center text-center start-0 
+    bg-black text-slate-200 font-bold font-serif"
     >
-      <div
-        id="icon"
-        className="absolute font-light left-0 pl-9 text-3xl items-end"
-      >
-        <div className="flex invisible md:visible lg:visible flex-grow flex-col items-end w-fit
-        ">
+      <div id="icon" className=" items-start font-light text-3xl">
+        <div
+          className="flex md:visible invisible flex-col items-end
+        "
+        >
           <h1 className="font-bold ">Aurora Powell</h1>
-          <h3 className="text-sm">Artist // Full-Stack Developer</h3>
+          <h3 className="text-sm">Artist // Developer</h3>
         </div>
-        
       </div>
-      <div className="flex flex-grow items-center w-fit">
+      <div className="flex w-full bg-red-400 justify-center lg:visible gap-10 h-fit">
+        <button
+          onClick={() => navigate("/")}
+          className="px-3 hover:text-red-400"
+        >
+          home
+        </button>
 
-        {/* ----------------
-          
-          v FIX THIS, STYLISTICALLY v
-          
-          --------------------- */}
-        {/* {nav ? (
-          <div className="w-full min-h-screen  z-20 m-10 flex-col">
-            <p>home</p>
-            <p>projects</p>
-            <p>about</p>
-          </div>
-        ) : ( */}
-          <div className="flex-grow lg:visible gap-10">
+        <div className="flex flex-col">
+          <button
+            className="hover:text-fuchsia-500"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            coding
+          </button>
+
+          {/* **** !!![[ Implement the below dropdown menu for Mobile menu ]]!!! *** */}
+
+          {/* {isDropdownVisible && (
             <button
-              onClick={() => navigate("/")}
-              className="px-3 hover:text-red-400"
-            >
-              home
-            </button>
-            {/* <button
+              className="hover:text-fuchsia-500 relative"
               onClick={() => navigate("/projects")}
-              className="hover:text-fuchsia-500"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
             >
               projects
-            </button> */}
-            <button
-              onClick={() => navigate("/about")}
-              className="px-3 hover:text-red-400"
-            >
-              about
             </button>
-          </div>
-        {/* )} */}
+          )} */}
+        </div>
+        <button
+          onClick={() => navigate("/about")}
+          className="px-3 hover:text-red-400"
+        >
+          about
+        </button>
       </div>
 
       {/* <button

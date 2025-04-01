@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React from "react";
 // import Content from "./components/projects/countme.in/content.jsx";
 
-// import Projects from "./components/Projects";
+import Projects from "./components/Projects";
 import Landing from "./components/Landing";
 import About from "./components/About";
 // import Email from "./components/projects/Email.jsx";
@@ -11,7 +11,7 @@ import Menu from "./components/functional/menu.jsx";
 import ScrollToTop from "./components/functional/ScrollToTop";
 
 // Projects
-// import EventList from "./components/projects/countme.in/eventList";
+import EventList from "./components/projects/countme.in/eventList";
 
 // Site palette (for now??)
 const colors = {
@@ -29,7 +29,7 @@ function App() {
       <Menu />
       <Routes>
         <Route path="/" element={<Landing />} />
-        {/* <Route path="/projects" element={<Projects />} /> */}
+        <Route path="/projects" element={<Projects />} />
         <Route path="/about" element={<About />} />
         {/* <Route path="/email" element={<Email />} /> */}
         {/* <Route path="/rsvp" element={<EventList />} /> */}
