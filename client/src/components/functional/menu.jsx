@@ -30,31 +30,28 @@ const Menu = () => {
       items-center text-center start-0 
     bg-black text-slate-200 font-bold font-serif"
     >
-      <div id="icon" className=" items-start font-light text-3xl">
-        <div
-          className="flex md:visible invisible flex-col items-end
-        "
-        >
+      <div id="icon" className="font-light text-3xl w-2/6">
+        <div className="flex md:visible invisible flex-col m-3">
           <h1 className="font-bold ">Aurora Powell</h1>
           <h3 className="text-sm">Artist // Developer</h3>
         </div>
       </div>
-      <div className="flex w-full bg-red-400 justify-center lg:visible gap-10 h-fit">
-        <button
+      <div className="flex w-5/6 justify-center lg:visible gap-10 h-fit">
+        {/* <button
           onClick={() => navigate("/")}
           className="px-3 hover:text-red-400"
         >
           home
-        </button>
+        </button> */}
 
         <div className="flex flex-col">
-          <button
+          {/* <button
             className="hover:text-fuchsia-500"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
             coding
-          </button>
+          </button> */}
 
           {/* **** !!![[ Implement the below dropdown menu for Mobile menu ]]!!! *** */}
 
@@ -69,12 +66,15 @@ const Menu = () => {
             </button>
           )} */}
         </div>
-        <button
+
+        {/* VVVVV I need to figure out what to put in my about. VVVV */}
+
+        {/* <button
           onClick={() => navigate("/about")}
           className="px-3 hover:text-red-400"
         >
           about
-        </button>
+        </button> */}
       </div>
 
       {/* <button
