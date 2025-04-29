@@ -4,9 +4,17 @@ import { useState, useEffect } from "react";
 import data from "./art.json";
 import ArtModal from "./ArtModal";
 
+import useScreenSize from "./useScreenSize";
+// screenSize.width & screenSize.height
+
 import { IoIosCloseCircle } from "react-icons/io";
 
 const ArtGallery = () => {
+  const screenSize = useScreenSize();
+  console.log(
+    "Screen size is: " + screenSize.width + " x " + screenSize.height
+  );
+
   const [modalOpen, setModalOpen] = useState(false);
   const [loading, setLoading] = useState(true);
 
