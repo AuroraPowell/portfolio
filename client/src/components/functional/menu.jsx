@@ -37,12 +37,12 @@ const Menu = () => {
         </div>
       </div>
       <div className="flex w-5/6 justify-center lg:visible gap-10 h-fit">
-        {/* <button
+        <button
           onClick={() => navigate("/")}
           className="px-3 hover:text-red-400"
         >
           home
-        </button> */}
+        </button>
 
         <div className="flex flex-col">
           {/* <button
@@ -69,12 +69,12 @@ const Menu = () => {
 
         {/* VVVVV I need to figure out what to put in my about. VVVV */}
 
-        {/* <button
+        <button
           onClick={() => navigate("/about")}
           className="px-3 hover:text-red-400"
         >
           about
-        </button> */}
+        </button>
       </div>
 
       {/* <button

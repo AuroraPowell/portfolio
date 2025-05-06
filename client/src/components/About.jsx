@@ -1,6 +1,6 @@
 import React from "react";
 import Menu from "./functional/menu";
-import Footer from "./Footer";
+// import Footer from "./Footer";
 
 import selfie from "../assets/selfie.jpg";
 
@@ -10,12 +10,24 @@ const About = () => {
   const info = (
     <p className="font-light p-2 ">
       I am a full stack developer that has 6 years experience in front-end web
-      development. <br></br><br></br> 
-      I primarily code in NodeJS and ReactJS, though I've used Java, HTML/CSS/SCSS, and C and learn quickly. {" "}
+      development. <br></br>
+      <br></br>{" "}
     </p>
   );
 
-  function onClick() {}
+  const Abt = () => {
+    return (
+      <div id="content" className="items-center h-full grid grid-cols-3 my-9">
+        <div className="w-3/4 h-96 mx-auto bg-white rounded-md"></div>
+        <div className="w-2/3 h-96 mx-auto  bg-fuchsia-300"></div>
+        <div className="w-3/4 h-96 mx-auto  bg-white rounded-md"></div>
+        <div className="col-span-3 w-3/4 mx-auto m-9 h-96 bg-red-400 p-9">
+          womp womp
+        </div>
+      </div>
+    );
+  };
+
   const Card = () => {
     return (
       <div
@@ -60,19 +72,12 @@ const About = () => {
     );
   };
   return (
-    // formerly had it fade between gradient screens - too difficult to keep up style
-    // <AnimatedPage>
-    <div className="min-h-screen  flex flex-col mx-auto  overflow-hidden bg-black z-30 border-white border-8">
+    <div className="min-h-screen  flex flex-col mx-auto   bg-black z-30 border-white border-8">
       {/* <Menu /> */}
-      <div id="card-loader" className="flex-grow mx-auto p-9">
-        <Card />
-      </div>
-      <div className="pt-9 text-white w-full mx-auto h-fit">
-        
-      </div>
-      {/* <Footer /> */}
+      <Abt />
+      <div id="card-loader" className="flex-grow mx-auto p-9"></div>
+      <div className="pt-9 text-white w-full mx-auto h-fit"></div>
     </div>
-    // </AnimatedPage>
   );
 };
 

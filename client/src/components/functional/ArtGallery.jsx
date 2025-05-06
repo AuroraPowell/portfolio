@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 
 import data from "./art.json";
 import ArtModal from "./ArtModal";
+import { LiaWindowCloseSolid } from "react-icons/lia";
 
 import useScreenSize from "./useScreenSize";
 // screenSize.width & screenSize.height
@@ -128,8 +129,17 @@ const ArtGallery = () => {
             setArtFocus();
           }}
         >
-          <div className="flex flex-col md:max-w-md max-h-screen mx-auto">
-            <img src={artFocus.imgPath} className="flex-grow mx-auto h-fit" />
+          <div className="flex flex-col md:max-w-md  mx-auto">
+            <div className="m-5">
+              <LiaWindowCloseSolid
+                className="absolute top-0 right-0 m-3 text-white text-5xl hover:cursor-pointer"
+                onClick={() => {
+                  setModalOpen(false);
+                  setArtFocus();
+                }}
+              />
+              <img src={artFocus.imgPath} className="flex-grow mx-auto h-fit" />
+            </div>
             {/* <div className="text-3xl m-5">
               <p>{artFocus.title}</p>
               <p>{artFocus.year}</p>
