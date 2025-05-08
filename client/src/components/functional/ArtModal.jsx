@@ -7,12 +7,14 @@ export default function ArtModal({ open, onClose, children }) {
     <div
       onClick={onClose}
       className={`
-            fixed inset-0 flex justify-center my-auto min-h-screen items-center 
+            fixed inset-0 flex justify-center items-center 
             transition-colors bg-black 
             ${open ? "visible" : "invisible"}
         `}
     >
-      <div onClick={(e) => e.stopPropagation()}>{children}</div>
+      <div onClick={(e) => e.stopPropagation()} className="my-5">
+        {children}
+      </div>
     </div>
   );
 }

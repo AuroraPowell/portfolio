@@ -106,7 +106,7 @@ const ArtGallery = () => {
       // rendering all art or only from specific series
       <ul
         id="gallery"
-        className="ml-auto grid grid-cols-1 md:grid-cols-3 max-xl:grid-cols-3 2xl:grid-cols-6 gap-y-3 w-5/6 right-0"
+        className="ml-auto grid grid-cols-1 mx-auto min-h-screen md:grid-cols-3 max-xl:grid-cols-3 2xl:grid-cols-6 gap-y-3 w-5/6 right-0"
       >
         {seriesFocus == ""
           ? artList.map((art) => <ArtCard id={art.title} art={art} />)
@@ -116,10 +116,7 @@ const ArtGallery = () => {
   };
 
   return (
-    <div
-      id="sidebar_and_gallery"
-      className="min-h-screen flex w-full border-4 border-white"
-    >
+    <div id="sidebar_and_gallery" className="flex w-full border-4 border-white">
       <CreateSidebar />
       {artFocus && (
         <ArtModal
@@ -129,8 +126,8 @@ const ArtGallery = () => {
             setArtFocus();
           }}
         >
-          <div className="flex flex-col md:max-w-md  mx-auto">
-            <div className="m-5">
+          <div className="flex flex-col md:max-w-md mx-auto ">
+            <div className="">
               <LiaWindowCloseSolid
                 className="absolute top-0 right-0 m-3 text-white text-5xl hover:cursor-pointer"
                 onClick={() => {
@@ -138,7 +135,7 @@ const ArtGallery = () => {
                   setArtFocus();
                 }}
               />
-              <img src={artFocus.imgPath} className="flex-grow mx-auto h-fit" />
+              <img src={artFocus.imgPath} className="my-5" />
             </div>
             {/* <div className="text-3xl m-5">
               <p>{artFocus.title}</p>
