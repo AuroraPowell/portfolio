@@ -126,23 +126,27 @@ const ArtGallery = () => {
             setArtFocus();
           }}
         >
-          <div className="flex flex-col md:max-w-md mx-auto ">
-            <div className="">
+          <div className="md:max-w-md mx-auto ">
+            <div className="flex">
               <LiaWindowCloseSolid
-                className="absolute top-0 right-0 m-3 text-white text-5xl hover:cursor-pointer"
+                className="absolute top-0 right-0 m-3 text-slate-900 text-lg hover:cursor-pointer"
                 onClick={() => {
                   setModalOpen(false);
                   setArtFocus();
                 }}
               />
-              <img src={artFocus.imgPath} className="my-5" />
-            </div>
-            {/* <div className="text-3xl m-5">
-              <p>{artFocus.title}</p>
+              
+            <div className="text-lg items-center mx-auto flex justify-around">
+              <p className="">{artFocus.title}</p>
+              <img src={artFocus.imgPath} className="my-5 p-3" />
+              <div className="justify-between">
+                
               <p>{artFocus.year}</p>
               <p>{artFocus.medium}</p>
               <p>{artFocus.size}</p>
-            </div> */}
+              </div>
+            </div>
+            </div>
           </div>
         </ArtModal>
       )}

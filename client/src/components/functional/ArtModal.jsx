@@ -8,7 +8,7 @@ export default function ArtModal({ open, onClose, children }) {
       onClick={onClose}
       className={`
             fixed inset-0 flex justify-center items-center 
-            transition-colors bg-black 
+            transition-colors bg-white 
             ${open ? "visible" : "invisible"}
         `}
     >
